@@ -31,59 +31,19 @@
 
   </head>
   <body>
-    <!--[if lt IE 10]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-
-<!--     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">Works</h3>
-      </div>
-
-      <div class="jumbotron">
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
-      </div>
-
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>HTML5 Boilerplate</h4>
-          <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-
-          <h4>Sass</h4>
-          <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
-
-          <h4>Bootstrap</h4>
-          <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-          <h4>Modernizr</h4>
-          <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
-
-        </div>
-      </div>
-
-      <div class="footer">
-        <p>♥ from the Yeoman team</p>
-      </div>
-    </div> -->
-
-<div class="container-fluid latestay-max">
+<nav class="navbar navbar-default navbar-fixed-top latestay-bar">
+  <div class="container-fluid latestay-max">
   <div class="row">
         <div class="col-lg-6 col-md-5 col-sm-3 col-xs-12">
-            LateStays Beta
+            <div class="latestay-logo"></div>
         </div>
         <div class="col-lg-6 col-md-7 col-sm-9 col-xs-12">
-            <ul class="nav nav-pills">
-              <li role="presentation" class="active"><a href="#">Subscribe to get exclusive offers</a></li>
-              <li role="presentation"><a href="#">Currency Converter</a></li>
+            <ul class="nav nav-pills latestay-pills">
+              <li role="presentation"><a href="#">Subscribe to get exclusive offers</a><span class="arrow_r"></span></li>
+              <li role="presentation"><a href="#">Currency Converter</a><span class="arrow_r"></span></li>
               <li role="dropdown" class="language-wrapper">
                   <a id="dLabel" class="language-initial" data-target="#" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                    Dropdown trigger
+                    English
                     <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu language" role="menu" aria-labelledby="dLabel">
@@ -98,9 +58,94 @@
             </ul>
         </div>
   </div>
+  </div>
+</nav>
+<div class="content">
+  <div class="jumbotron hero">
+    <div class="hero-fade-wrapper">
+        <div class="container">
+            <h1>LateStays, your hotel rooms <span class='discount-color'>discount store</span></h1>
+            <h3>We only display discounted offers</h3>
+
+        </div>
+        <div class="row row-extra"></div>
+        <div class="form-group">
+          <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle btn-int" data-toggle="dropdown">
+                  <span class="btn-text">Thailand</span>
+                  <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                  <li><a>Singapore</a></li>
+                  <li><a>Japan</a></li>
+                  <li><a>South Korea</a></li>
+              </ul>
+          </div>
+          <div class="btn-group">
+              <button type="button" class="btn btn-default dropdown-toggle btn-int" data-toggle="dropdown">
+                  <span class="btn-text">Bangkok</span> <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" role="menu">
+                  <li><a>Phuket</a></li>
+                  <li><a>Chiangmai</a></li>
+                  <li><a>Ubon</a></li>
+              </ul>
+          </div>
+          <input type="text" class="form-control check-in" placeholder="Check-in Date">
+          <input type="text" class="form-control check-out" placeholder="Check-out Date">
+          <button type="button" class="btn primary-btn check-out-button">Search</button>
+          <div class="extra">
+              <p>+ Looking for more hotels? Type Here</p>
+          </div>
+          <div class="form-middle">
+              <div class="extra-input">
+                  <input type="text" class="form-control" placeholder="Thailand, Bangkok">
+              </div>
+          </div>
+          <div class="clear"></div>
+          <div class="form-bottom">
+              <div class="cal-night"> 0 NIGHT(S) </div>
+              <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle btn-int" data-toggle="dropdown">
+                      <span class="btn-text">1 Room</span> <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                      <li><a>2 Rooms</a></li>
+                      <li><a>3 Rooms</a></li>
+                      <li><a>4 Rooms</a></li>
+                  </ul>
+              </div>
+              <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle btn-int" data-toggle="dropdown">
+                      <span class="btn-text">2 Adults</span> <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                      <li><a>1 Adult</a></li>
+                      <li><a>2 Adults</a></li>
+                      <li><a>3 Adults</a></li>
+                  </ul>
+              </div>
+              <div class="btn-group">
+                  <button type="button" class="btn btn-default dropdown-toggle btn-int" data-toggle="dropdown">
+                      <span class="btn-text">0 Child</span> <span class="caret"></span>
+                  </button>
+                  <ul class="dropdown-menu" role="menu">
+                      <li><a>1 Child</a></li>
+                      <li><a>2 Children</a></li>
+                  </ul>
+              </div>
+              <button type="button" class="btn primary-btn">Search</button>
+          </div>
+        </div>
+
+
+    </div>
+  </div>
 </div>
-
-
+<div class="footer">
+  <h6>Web Design Copyright @ 2015 by Asia Web Direct Co., Ltd.<br/>
+  IATA TIDS No.96-6 2482 4 <br/> PATA Member ID: 1879</h6>
+</div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

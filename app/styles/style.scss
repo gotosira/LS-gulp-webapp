@@ -1,15 +1,377 @@
+/* -- Default variable -- */
+$def-font: "Arial";
+$def-font-size: 14px;
+$def-h1: 40px;
+$def-h2: 26px;
+$def-h3: 24px;
+$def-h4: 16px;
+$def-h5: 13px;
+$def-font-color: #646464;
+$def-btn-font-color: #fff;
+$def-title-font-color: #fff;
+$def-primary-font-size: 18px;
+
+/* --- Ending variable default -- */
+
+
+/* --- Default Function --- */
+*{
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  -webkit-appearance: none;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+html, body{
+	  height: 100%;
+	  padding:0;
+	  margin:0;
+}
+*:focus {
+    outline: 0 !important;
+}
+.row{
+	margin:0;
+}
+.primary-btn:hover, .primary-btn:visited, .primary-btn:focus{
+	color:$def-btn-font-color;
+}
+textarea:focus, input:focus{
+    outline: 0 !important;
+}
+
+body{
+	font-family: $def-font;
+	font-size: $def-font-size;
+	color: $def-font-color;
+}
+h1{
+	font-size: $def-h1;
+}
+h2{
+	font-size: $def-h2;
+}
+h3{
+	font-size: $def-h3;
+}
+h4{
+	font-size: $def-h4;
+}
+h1{
+	font-size: $def-h5;
+}
+
+@mixin background-clip($clip){
+	background-clip:$clip;
+}
+
+@mixin box-shadow($property, $x:0, $y:0, $blur:0, $color:#fff){
+	box-shadow: $property $x $y $blur $color;
+}
+
+@mixin border-radius($radius-top-left: 0, $radius-top-right: 0, $radius-bottom-left: 0, $radius-bottom-right: 0){
+  border-top-left-radius: $radius-top-left;
+  border-top-right-radius: $radius-top-right;
+  border-bottom-left-radius: $radius-bottom-left;
+  border-bottom-right-radius: $radius-bottom-right;
+}
+@mixin padding($left:0, $top:0, $right:0, $bottom:0){
+	padding-left:$left;
+	padding-top:$top;
+	padding-right:$right;
+	padding-bottom:$bottom;
+}
+@mixin block{
+	display:block;
+}
+@mixin inline-block{
+	display:inline-block;
+}
+@mixin float($float:left){
+	float:$float;
+}
+@mixin clear{
+	clear:both;
+}
+
+.clear{
+	@include clear;
+}
+
+/* --- Ending Default Function --- */
+
+/*-- Styling default Buttons --*/
+.btn{
+			font-size: $def-font-size;
+			min-width: 216px;
+			max-width: 216px;
+			min-height: 36px;
+			max-height: 36px;
+			text-align: left;
+			padding-left: 6px;
+			padding-right: 6px;
+			@include padding();
+			@include border-radius(3px, 3px, 3px, 3px);
+			@include background-clip(padding-box);
+			background-color: #fff; /* layer fill content */
+			@include box-shadow(inset, -3px, -4px, 0, rgba(0,0,0,.06)); /* inner shadow */
+			@include float(left);
+}
+.btn-text{
+	width:90%;
+	@include inline-block;
+}
+.primary-btn{
+	background-color: rgb(0, 133, 211);
+	text-transform: capitalize;
+	color:$def-btn-font-color;
+	letter-spacing: 0.5px;
+	text-shadow: 0.5px 0.866px 0px rgba(0, 0, 0, 0.18);
+	font-size:$def-primary-font-size;
+	text-align:center;
+	max-width:150px;
+}		
+
+.dropdown-menu{
+	cursor:pointer;
+}
+/*--- Ending stying buttons -- */
+
+@mixin def-text-shadow{
+	text-shadow: 1px 1px 0 rgba(0,0,0,.23);
+}
+.navbar-fixed-top{
+	top:0;
+	position:relative;
+	margin-bottom:0;
+}
+
+.latestay-bar{
+	  background: #0387d4;
+	  background: -moz-linear-gradient(top, #0387d4 0%, #036fc5 65%, #0367c0 100%);
+	  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #0387d4), color-stop(65%, #036fc5), color-stop(100%, #0367c0));
+	  background: -webkit-linear-gradient(top, #0387d4 0%, #036fc5 65%, #0367c0 100%);
+	  background: -o-linear-gradient(top, #0387d4 0%, #036fc5 65%, #0367c0 100%);
+	  background: -ms-linear-gradient(top, #0387d4 0%, #036fc5 65%, #0367c0 100%);
+	  background: linear-gradient(to bottom, #0387d4 0%, #036fc5 65%, #0367c0 100%);
+}
+.latestay-logo{
+	  background: url('/images/LateStaysBeta.svg');
+	  width: 100%;
+	  height: 60px;
+	  max-width: 200px;
+	  background-size: auto 60px;
+	  display: block;
+	  background-repeat: no-repeat;
+	  position: relative;
+	  cursor: pointer;
+}
 .latestay-max{
 	max-width:1300px;
 }
 
 .language{
   margin-top: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
+  @include border-radius();
   min-width: 100%;
   &-initial{
 	background-color: #fff;
 	border-radius:0;
   }
 }
+.check-in, .check-out{
+  background: url('/images/calendar.svg');
+  background-size: 20px auto;
+  background-repeat: no-repeat;
+  background-position: 95% 5px;
+  text-align: center;
+}
 
+.latestay-pills{
+	color:$def-title-font-color;
+	top: 10px;
+  	position: relative;
+	>li{
+		>a, >a:focus, >a:hover{
+			background:none !important;
+			color:$def-title-font-color;
+			float: left;
+		}
+	}
+	
+}
+.arrow_r{
+  background: url('/images/arrow_r.svg') no-repeat;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  vertical-align: middle;
+  float: right;
+  background-size: 20px 20px;
+  top: 10px;
+  position: relative;
+}
+
+.hero{
+	background: url('/images/hero-bg.jpg') no-repeat;
+	background-size: 100%;
+	min-height: 577px;
+	padding: 0;
+	max-height: 577px;
+	margin: 0;
+	height: 100%;
+	.hero-fade-wrapper{
+		background: rgba(0,35,140,0.79);
+		background: -moz-linear-gradient(top, rgba(0,35,140,0.79) 0%, rgba(255,255,255,0) 100%);
+		background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(0,35,140,0.79)), color-stop(100%, rgba(255,255,255,0)));
+		background: -webkit-linear-gradient(top, rgba(0,35,140,0.79) 0%, rgba(255,255,255,0) 100%);
+		background: -o-linear-gradient(top, rgba(0,35,140,0.79) 0%, rgba(255,255,255,0) 100%);
+		background: -ms-linear-gradient(top, rgba(0,35,140,0.79) 0%, rgba(255,255,255,0) 100%);
+		background: linear-gradient(to bottom, rgba(0,35,140,0.79) 0%, rgba(255,255,255,0) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00238c', endColorstr='#ffffff', GradientType=0 );
+		padding: 0;
+		padding-top: 10px;
+		background-size: 100% 37%;
+  		background-repeat: no-repeat;
+  		.row-extra{
+  			  min-height: 260px;
+  		}
+	}
+	.container{
+		h1{
+				color: $def-title-font-color;
+				font-size:$def-h1;
+				font-weight: bold;
+				@include def-text-shadow;
+			.discount-color{
+				color:#fffc00;
+			}
+		}
+		h3{
+			font-size: $def-h3;
+			color: $def-title-font-color; /* text color */
+			@include def-text-shadow;
+			margin-top: 5px;
+		}
+	}
+	.form-group{
+		max-width: 905px;
+		margin: 0 auto;
+		@include border-radius(3px, 3px, 3px, 3px);
+		@include background-clip(padding-box);
+		background-color: rgba(186,207,57,.8);
+		-moz-box-shadow: 4px 4px 0 rgba(0,0,0,.17), inset 1px 1px 1px rgba(0,0,0,.08); /* drop shadow and inner shadow */
+		-webkit-box-shadow: 4px 4px 0 rgba(0,0,0,.17), inset 1px 1px 1px rgba(0,0,0,.08); /* drop shadow and inner shadow */
+		box-shadow: 4px 4px 0 rgba(0,0,0,.17), inset 1px 1px 1px rgba(0,0,0,.08); /* drop shadow and inner shadow */
+		@include padding(10px, 10px, 10px, 10px);
+		.check-out-button{
+				min-width:100px !important;
+				max-width:100px !important;
+				text-transform: uppercase;
+				font-weight: 600;
+				text-align: center !important;
+		}
+		.btn-group{
+			@include float(left);
+			margin-right:5px;
+		}
+		.btn{
+			font-size: $def-font-size;
+			min-width: 216px;
+			max-width: 216px;
+			min-height: 36px;
+			max-height: 36px;
+			@include padding();
+			text-align: left;
+			padding-left:6px;
+			padding-right:6px;
+		}
+		.check-in, .check-out{
+			  text-indent: 10px;
+		}
+		
+		.form-control{
+			@extend .btn;
+			@include inline-block;
+			margin-right: 5px;
+			cursor:pointer;
+			max-width: 160px;
+  			min-width: 100px;
+
+		}
+		.dropdown-menu{
+			min-width:100%;
+		}
+		.extra{
+			
+			p{
+				font-size:$def-h5;
+				text-align:left;
+				clear: both;
+				color: #4b5817;
+				font-weight: bold;
+				text-shadow: 1px 1px 0 rgba(255,255,255,.27);
+				padding-top: 5px;
+	  			margin-bottom: 5px;
+	  			width: 250px;
+	  			cursor: pointer;
+  			}
+		}
+		.cal-night{
+			@include inline-block;
+			@include float(left);
+			color: $def-btn-font-color;
+			@include padding(0, 5px, 0, 0);
+		}
+		.extra-input {
+			
+			input{
+				width: 460px;
+				max-width: initial;
+				min-width: initial;
+				float: left;
+				cursor: pointer;
+				background-image: url('/images/search_icn.svg');
+				background-repeat: no-repeat;
+				background-size: 20px auto;
+				background-position: 10px;
+				text-indent: 35px;
+			}
+		}
+		.form-middle{
+			display:none;
+		}
+		.form-bottom{
+			@include padding(0, 7px, 0, 0);
+			min-height: 40px;
+			display:none;
+			div{
+				width:105px;
+				.btn{
+					min-width:105px;
+					max-width:105px;
+					padding-right:12px;
+				}
+			}
+			.primary-btn{
+				text-align:center;
+				text-transform: uppercase;
+				letter-spacing: 0.5px;
+				max-width:150px;
+				min-width:150px;
+			}
+
+		}
+
+	}
+}
+
+.content{
+	min-height:100%;
+	height: auto !important;
+	margin: 0 auto -100px;
+}
+
+.footer{
+	height:100px;
+}
