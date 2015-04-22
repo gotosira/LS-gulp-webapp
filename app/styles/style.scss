@@ -1,0 +1,15 @@
+.latestay-max{
+	max-width:1300px;
+}
+
+.language{
+  margin-top: 0;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  min-width: 100%;
+  &-initial{
+	background-color: #fff;
+	border-radius:0;
+  }
+}
+
