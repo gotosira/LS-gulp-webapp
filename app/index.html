@@ -22,10 +22,12 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/bootstrap-datepicker.min.css">
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
+  
     <!-- endbuild -->
 
 
@@ -39,8 +41,8 @@
         </div>
         <div class="col-lg-6 col-md-7 col-sm-9 col-xs-12">
             <ul class="nav nav-pills latestay-pills">
-              <li role="presentation"><a href="#">Subscribe to get exclusive offers</a><span class="arrow_r"></span></li>
-              <li role="presentation"><a href="#">Currency Converter</a><span class="arrow_r"></span></li>
+              <li role="presentation"><a href="#">Subscribe to get exclusive offers <span class="arrow_r"></span></a></li>
+              <li role="presentation"><a href="#">Currency Converter <span class="arrow_r"></span></a></li>
               <li role="dropdown" class="language-wrapper">
                   <a id="dLabel" class="language-initial" data-target="#" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
                     English
@@ -70,9 +72,9 @@
         </div>
         <div class="row row-extra"></div>
         <div class="form-group">
-          <div class="btn-group">
+          <div class="btn-group country-group">
               <button type="button" class="btn btn-default dropdown-toggle btn-int" data-toggle="dropdown">
-                  <span class="btn-text">Thailand</span>
+                  <span class="btn-text selected">Thailand</span>
                   <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" role="menu">
@@ -81,9 +83,9 @@
                   <li><a>South Korea</a></li>
               </ul>
           </div>
-          <div class="btn-group">
+          <div class="btn-group area-group">
               <button type="button" class="btn btn-default dropdown-toggle btn-int" data-toggle="dropdown">
-                  <span class="btn-text">Bangkok</span> <span class="caret"></span>
+                  <span class="btn-text selected">Bangkok</span> <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" role="menu">
                   <li><a>Phuket</a></li>
@@ -91,15 +93,17 @@
                   <li><a>Ubon</a></li>
               </ul>
           </div>
-          <input type="text" class="form-control check-in" placeholder="Check-in Date">
-          <input type="text" class="form-control check-out" placeholder="Check-out Date">
+          <div class="input-daterange">
+              <input type="text" class="form-control check-in" value="" placeholder="Check-in Date" />
+              <input type="text" class="form-control check-out" value="" placeholder="Check-out Date"/>
+          </div>
           <button type="button" class="btn primary-btn check-out-button">Search</button>
           <div class="extra">
-              <p>+ Looking for more hotels? Type Here</p>
+              <p><span class="extra-symbol">+</span> Looking for more hotels? Type Here</p>
           </div>
           <div class="form-middle">
               <div class="extra-input">
-                  <input type="text" class="form-control" placeholder="Thailand, Bangkok">
+                  <input type="text" class="form-control" value="">
               </div>
           </div>
           <div class="clear"></div>
@@ -143,8 +147,11 @@
   </div>
 </div>
 <div class="footer">
-  <h6>Web Design Copyright @ 2015 by Asia Web Direct Co., Ltd.<br/>
-  IATA TIDS No.96-6 2482 4 <br/> PATA Member ID: 1879</h6>
+  <div class="container">
+      <h6>Web Design Copyright @ 2015 by Asia Web Direct Co., Ltd.<br/>
+        IATA TIDS No.96-6 2482 4 <br/> PATA Member ID: 1879
+      </h6>
+  </div>
 </div>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
@@ -159,6 +166,7 @@
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="scripts/bootstrap-datepicker.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

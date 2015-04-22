@@ -135,6 +135,14 @@ h1{
 .dropdown-menu{
 	cursor:pointer;
 }
+
+.btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active, .open > .btn-default.dropdown-toggle,
+input:hover, input:focus, input:active{
+  color: #000;
+  background-color: #fff;
+  border-color: #66afe9;
+  outline: 0;
+ }
 /*--- Ending stying buttons -- */
 
 @mixin def-text-shadow{
@@ -208,18 +216,19 @@ h1{
   vertical-align: middle;
   float: right;
   background-size: 20px 20px;
-  top: 10px;
+  margin-left: 10px;
   position: relative;
 }
 
 .hero{
-	background: url('/images/hero-bg.jpg') no-repeat;
-	background-size: 100%;
-	min-height: 577px;
-	padding: 0;
-	max-height: 577px;
-	margin: 0;
-	height: 100%;
+	  background: url('/images/hero-bg.jpg') no-repeat;
+	  background-size: cover;
+	  min-height: 577px;
+	  padding: 0;
+	  max-height: 577px;
+	  margin: 0;
+	  height: 100%;
+	  background-position: center center;
 	.hero-fade-wrapper{
 		background: rgba(0,35,140,0.79);
 		background: -moz-linear-gradient(top, rgba(0,35,140,0.79) 0%, rgba(255,255,255,0) 100%);
@@ -234,7 +243,7 @@ h1{
 		background-size: 100% 37%;
   		background-repeat: no-repeat;
   		.row-extra{
-  			  min-height: 260px;
+  			  min-height: 284px;
   		}
 	}
 	.container{
@@ -295,7 +304,7 @@ h1{
 			@include inline-block;
 			margin-right: 5px;
 			cursor:pointer;
-			max-width: 160px;
+			max-width: 166px;
   			min-width: 100px;
 
 		}
@@ -322,6 +331,7 @@ h1{
 			@include float(left);
 			color: $def-btn-font-color;
 			@include padding(0, 5px, 0, 0);
+			font-weight: 600;
 		}
 		.extra-input {
 			
@@ -356,9 +366,11 @@ h1{
 			.primary-btn{
 				text-align:center;
 				text-transform: uppercase;
-				letter-spacing: 0.5px;
+				letter-spacing: 1px;
 				max-width:150px;
 				min-width:150px;
+				font-weight: 600;
+				font-size:$def-h4;
 			}
 
 		}
@@ -369,9 +381,17 @@ h1{
 .content{
 	min-height:100%;
 	height: auto !important;
-	margin: 0 auto -100px;
+	margin: 0 auto;
 }
 
 .footer{
 	height:100px;
+	background:#c0d931;
+	h6{
+		text-align: center;
+		line-height: 20px;
+		font-size: $def-font-size;
+
+	}
 }
+
