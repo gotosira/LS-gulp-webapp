@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <title>Works</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="styles/datepicker-custom.css">
+    <link rel="stylesheet" href="styles/typeahead.css">
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
@@ -33,33 +35,83 @@
 
   </head>
   <body>
-<nav class="navbar navbar-default navbar-fixed-top latestay-bar">
+<nav class="navbar navbar-default navbar-fixed-top latestay-bar" role="navigation">
   <div class="container-fluid latestay-max">
-  <div class="row">
-        <div class="col-lg-6 col-md-5 col-sm-3 col-xs-12">
-            <div class="latestay-logo"></div>
-        </div>
-        <div class="col-lg-6 col-md-7 col-sm-9 col-xs-12">
-            <ul class="nav nav-pills latestay-pills">
-              <li role="presentation"><a href="#">Subscribe to get exclusive offers <span class="arrow_r"></span></a></li>
-              <li role="presentation"><a href="#">Currency Converter <span class="arrow_r"></span></a></li>
-              <li role="dropdown" class="language-wrapper">
-                  <a id="dLabel" class="language-initial" data-target="#" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
-                    English
-                    <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu language" role="menu" aria-labelledby="dLabel">
-                      <li role="presentation"> test </li>
-                      <li role="presentation"> test </li>  
-                      <li role="presentation"> test </li>  
-                      <li role="presentation"> test </li>  
-                      <li role="presentation"> test </li>  
-                      <li role="presentation"> test </li>
-                  </ul>
-              </li>
-            </ul>
-        </div>
-  </div>
+      <!-- mobile view for menu header -->
+      <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><div class="latestay-logo"></div> </a>
+      </div>
+    <!-- mobile view for body -->
+    <div class="collapse navbar-collapse">
+      <ul>
+            <li class="col-lg-5 col-md-4 col-sm-3 col-xs-12">
+                <div class="latestay-logo"></div>
+            </li>
+            <li class="col-lg-7 col-md-8 col-sm-9 col-xs-12">
+                <ul class="nav nav-pills latestay-pills">
+                  <li role="presentation"><a href="#">Subscribe to get exclusive offers <span class="arrow_r"></span></a></li>
+                  <li role="presentation"><a href="#">Currency Converter <span class="arrow_r"></span></a></li>
+                  <li role="dropdown" class="language-wrapper">
+                      <a id="dLabel" class="language-initial" data-target="#" href="" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                        <span class="lang-flag-en"></span>
+                        <span class="extra-text">English</span>
+                        <span class="caret"></span>
+                      </a>
+                      <ul class="dropdown-menu language" role="menu" aria-labelledby="dLabel">
+                          <li role="presentation">
+                              <a data-target="#"> 
+                              <span class="lang-flag-th"></span>
+                              <span> ไทย </span>
+                              </a>
+                          </li>
+                          <li role="presentation"> 
+                              <a data-target="#">
+                                <span class="lang-flag-my"></span>
+                                <span> Bahasa Malaysia </span>
+                              </a>
+                          </li>
+                          <li role="presentation">
+                            <a data-target="#"> 
+                              <span class="lang-flag-jp"></span>
+                              <span>日本語 </span>
+                            </a>
+                          </li>  
+                          <li role="presentation">
+                            <a data-target="#"> 
+                              <span class="lang-flag-kr"></span>
+                              <span> 한국어 </span>
+                            </a>
+                          </li>  
+                          <li role="presentation">
+                            <a data-target="#"> 
+                             <span class="lang-flag-ru"></span> 
+                             <span>Русский </span>
+                            </a>
+                          </li>  
+                          <li role="presentation">
+                            <a data-target="#"> 
+                             <span class="lang-flag-cn"></span> 
+                             <span> 简体中文 </span>
+                            </a>
+                          </li>
+                          <li role="presentation">
+                            <a data-target="#"> 
+                              <span class="lang-flag-id"></span> 
+                              <span> Bahasa Indonesia </span>
+                            </a>
+                          </li>
+                      </ul>
+                  </li>
+                </ul>
+            </li>
+      </ul>
+    </div>
   </div>
 </nav>
 <div class="content">
@@ -103,10 +155,10 @@
           </div>
           <div class="form-middle">
               <div class="extra-input">
-                  <input type="text" class="form-control" value="">
+                  <input type="text" class="form-control typeahead" value="">
               </div>
           </div>
-          <div class="clear"></div>
+          <!-- <div class="clear"></div> -->
           <div class="form-bottom">
               <div class="cal-night"> 0 NIGHT(S) </div>
               <div class="btn-group">
@@ -138,7 +190,6 @@
                       <li><a>2 Children</a></li>
                   </ul>
               </div>
-              <button type="button" class="btn primary-btn">Search</button>
           </div>
         </div>
 
@@ -167,6 +218,8 @@
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="scripts/bootstrap-datepicker.min.js"></script>
+    <script src="scripts/typehead.bundle.min.js"></script>
+
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -187,6 +240,7 @@
 
         <!-- build:js scripts/main.js -->
         <script src="scripts/main.js"></script>
+
         <!-- endbuild -->
 </body>
 </html>

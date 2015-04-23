@@ -1,3 +1,147 @@
+/*--- Start Media Query ---*/
+.dropdown-menu{
+		-moz-transition:    all 1000ms ease;
+	    -webkit-transition: all 1000ms ease;
+	    -o-transition:      all 1000ms ease;
+	    -ms-transition:     all 1000ms ease;
+	    transition:         all 1000ms ease;
+	}
+@media (min-width: 768px){
+
+	.navbar-header {
+	  display: none;
+	}
+	
+
+}
+@media (max-width: 768px){
+	button.btn.primary-btn.check-out-button {
+	  min-width: 96% !important;
+	  margin: 0 auto;
+	  margin-left: 10px;
+	  margin-top: 10px;
+	  text-align: center;
+	  min-height: 44px !important;
+	  font-size: 18px;
+	}
+	.hero .form-group .btn, .hero .form-group .form-control {
+	  max-width: 100% !important;
+	  min-width: 100% !important;
+	  margin-bottom: 2px;
+	}
+	.hero .form-group .btn-group{
+	  width: 100%;
+	  margin-bottom: 2px;
+	}
+	.row-extra{
+		min-height: 50px !important;
+	}
+	.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus{
+		background:none;
+		border-color:#fff;
+	}
+	.sr-only, .icon-bar{
+		background-color:#fff !important;
+	}
+
+	.language > li > a > span:first-child{
+	  margin-left: 0;
+	  background-size: 30px 20px;
+	  width: 30px;
+	  height: 20px;
+	}
+	.navbar-collapse > ul > li:nth-child(2){
+		background:#0464B1;
+	}
+	span.caret {
+	  float: right;
+	  top: 10px;
+	  position: relative;
+	  right: 10px;
+	}
+	.latestay-pills{
+		top:0 !important;
+	}
+	a#dLabel {
+	  border-radius: 0;
+	}
+	.language-initial > span:nth-child(1) {
+	  margin-left: 5px;
+	  background-size: 30px 20px;
+	  width: 30px;
+	  height: 20px;
+	}
+	.extra-text{
+		  width: auto !important;
+  		  font-size: 14px;
+	}
+	.latestay-pills > li + li {
+		margin-left:0;
+	}
+	.navbar-collapse .latestay-logo{
+	  		display:none;
+	}
+	.navbar-collapse > ul > li{
+		margin:0; padding:0;
+	}
+	.latestay-pills > li{
+		width:100%;
+		margin:0; padding:0;
+	}
+	.latestay-pills > li > a{
+		width:100%;
+	}
+	ul.dropdown-menu.language {
+	  position: relative;
+	}
+	.navbar-collapse.in {
+	  overflow-y: visible;
+	}
+}
+@media (min-width:768px) and (max-width:900px){
+	ul.dropdown-menu.language {
+  		left: -100px;
+  	}
+	a#dLabel {
+		min-width:0;
+	}
+	ul.dropdown-menu.language {
+	  left: -100px;
+	}
+	.nav > li > a {
+	   padding: 10px 5px;
+	}
+	span.extra-text{
+		display:none;
+	}
+	.navbar-collapse > ul, .navbar-collapse > ul > li{
+		padding:0;
+	}
+	.navbar-collapse > ul > li:nth-child(1) {
+		width:30%;
+	}
+	.navbar-collapse > ul > li:nth-child(2) {
+		width:70%;
+	}
+	.language-wrapper{
+		min-width:90px !important;
+	}
+	.latestay-pills{
+		float: right;
+	}
+	.row-extra{
+		 min-height: 200px;
+	}
+}
+/*-- Media Query -- */
+
+
+.container > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-header, .container-fluid > .navbar-collapse {
+  margin-right: 0;
+  margin-left: 0;
+  padding:0;
+}
+
 /* -- Default variable -- */
 $def-font: "Arial";
 $def-font-size: 14px;
@@ -12,7 +156,53 @@ $def-title-font-color: #fff;
 $def-primary-font-size: 18px;
 
 /* --- Ending variable default -- */
+/* --- Language Flag --- */
+.lang-flag{
+	width:20px; height:15px;
+	background-size: 20px 15px;
+  	background-repeat: no-repeat;
+  	display:inline-block;
+  	margin-right: 10px;
+	vertical-align: middle;
+	top: -2px;
+	position: relative;
+	&-en{
+		@extend .lang-flag;
+		background-image: url('/images/gb.svg');
+	}
+	&-th{
+		@extend .lang-flag;
+		background-image: url('/images/th.svg');
+	}
+	&-my{
+		@extend .lang-flag;
+		background-image: url('/images/my.svg');
+	}
+	&-jp{
+		@extend .lang-flag;
+		background-image: url('/images/jp.svg');
+	}
+	&-kr{
+		@extend .lang-flag;
+		background-image: url('/images/kr.svg');
+	}
+	&-ru{
+		@extend .lang-flag;
+		background-image: url('/images/ru.svg');
+	}
+	&-cn{
+		@extend .lang-flag;
+		background-image: url('/images/cn.svg');
+	}
+	&-id{
+		@extend .lang-flag;
+		background-image: url('/images/id.svg');
+	}
+}
 
+
+
+/* --- End Language Flag ---- */
 
 /* --- Default Function --- */
 *{
@@ -27,11 +217,20 @@ html, body{
 	  padding:0;
 	  margin:0;
 }
+ul, li {
+	margin:0;
+	text-decoration:none;
+	list-style:none;
+	padding: 0;
+}
 *:focus {
     outline: 0 !important;
 }
 .row{
 	margin:0;
+}
+.container-fluid{
+	padding:0;
 }
 .primary-btn:hover, .primary-btn:visited, .primary-btn:focus{
 	color:$def-btn-font-color;
@@ -39,6 +238,7 @@ html, body{
 textarea:focus, input:focus{
     outline: 0 !important;
 }
+
 
 body{
 	font-family: $def-font;
@@ -98,6 +298,13 @@ h1{
 	@include clear;
 }
 
+.navbar-brand{
+	float:none;
+	padding:0;
+	font-size:inital;
+	line-height:initial;
+	height:auto;
+}
 /* --- Ending Default Function --- */
 
 /*-- Styling default Buttons --*/
@@ -117,9 +324,16 @@ h1{
 			@include box-shadow(inset, -3px, -4px, 0, rgba(0,0,0,.06)); /* inner shadow */
 			@include float(left);
 }
-.btn-text{
+.btn-text, .extra-text{
 	width:90%;
 	@include inline-block;
+}
+.extra-text{
+	width:70%;
+	text-align:center;
+}
+.extra-input {
+  float: left;
 }
 .primary-btn{
 	background-color: rgb(0, 133, 211);
@@ -180,12 +394,37 @@ input:hover, input:focus, input:active{
 
 .language{
   margin-top: 0;
-  @include border-radius();
+  background: #0464B1;
+  border:0;
+  @include border-radius(0, 0, 5px, 5px);
   min-width: 100%;
+  font-size: 13px;
+  @include padding();
   &-initial{
 	background-color: #fff;
 	border-radius:0;
+	font-size: 12px;
+	&:hover{
+  		background-color: #135E99 !important;
+  	}
   }
+  &-wrapper{
+  	min-width:164px;
+  }
+  li{
+  	&:hover{
+  		background-color: #135E99;
+  	}
+  	>a, >a:hover, >a:focus{
+	  	color:#fff;
+		padding:0;
+		white-space:initial;
+		background:none;
+		padding: 8px;
+  		padding-left: 15px;
+  	}
+  }
+
 }
 .check-in, .check-out{
   background: url('/images/calendar.svg');
@@ -199,11 +438,17 @@ input:hover, input:focus, input:active{
 	color:$def-title-font-color;
 	top: 10px;
   	position: relative;
+  	font-size: 13px;
 	>li{
 		>a, >a:focus, >a:hover{
-			background:none !important;
+			background:none;
 			color:$def-title-font-color;
 			float: left;
+		}
+		>a.language-initial, >a.language-initial:focus, >a.language-initial:hover{
+			background:#0464B1;
+		  	min-width: 176px;
+  			padding: 10px;
 		}
 	}
 	
@@ -244,6 +489,7 @@ input:hover, input:focus, input:active{
   		background-repeat: no-repeat;
   		.row-extra{
   			  min-height: 284px;
+
   		}
 	}
 	.container{
@@ -264,6 +510,7 @@ input:hover, input:focus, input:active{
 		}
 	}
 	.form-group{
+		width:90%;
 		max-width: 905px;
 		margin: 0 auto;
 		@include border-radius(3px, 3px, 3px, 3px);
@@ -336,7 +583,7 @@ input:hover, input:focus, input:active{
 		.extra-input {
 			
 			input{
-				width: 460px;
+				width: 438px;
 				max-width: initial;
 				min-width: initial;
 				float: left;
@@ -352,7 +599,7 @@ input:hover, input:focus, input:active{
 			display:none;
 		}
 		.form-bottom{
-			@include padding(0, 7px, 0, 0);
+			@include padding();
 			min-height: 40px;
 			display:none;
 			div{
