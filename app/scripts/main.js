@@ -1,5 +1,16 @@
 /* jshint devel:true */
 
+/* Initiate Carousel Slider */
+$('.carousel').carousel({
+	interval: 10000
+});
+
+/* Disable input typing on mobile */
+$('input[readonly]').on('focus', function(ev) {
+    $(this).trigger('blur');
+ });
+
+
 $('.language > li > a').click(function(){
 	var get_lang_flag = $(this).find('span:eq(0)').attr('class');
 	var get_lang_text = $(this).find('span:eq(1)').text();
@@ -105,21 +116,15 @@ $('.extra p').click(function(){
 		$('.extra-symbol').html('+');
 	}
 	$('.form-bottom').slideDown('fast');
+	$('.check-out-button').hide();
+	$('.bottom-out').show();
 });
 
 $('.btn-int, .check-in, .check-out').click(function(){
 	$('.form-bottom').slideDown('fast');
+	$('.check-out-button').hide();
+	$('.bottom-out').show();
 });
-
-// $(document).click(function(e) {
-//     var target = e.target;
-
-//     if (!$(target).is('.form-group') && !$(target).parents().is('.form-group') && !$(target).is('.datepicker')) {
-//         $('.form-bottom').slideUp('fast');
-//         $('.form-middle').slideUp('fast');
-//         $('.check-out-button').show();
-//     }
-// });
 
 /* -- DatePicker Function --- */
 function days(){
@@ -130,16 +135,22 @@ function days(){
     	$('.cal-night').html(totalNight+' NIGHT(S) ');
 }
 
-
+var dateToday = new Date();
 $('.input-daterange').datepicker({
 	 format: "dd/mm/yyyy",
      language: "en",
-     todayHighlight: true
+     startDate: dateToday
 });
 
 $('.check-in').datepicker().on('changeDate', function(){
 	 $('.check-in').datepicker('hide');
      $('.check-out').datepicker('show');
+}).on('hide', function(){
+	$('.datepicker-opened').hide();
+}).on('show', function(){
+	$('.datepicker-opened').show();
+}).on('clearDate', function(){
+	$('.datepicker-opened').hide();
 });
 
 $('.check-out').datepicker().on('changeDate', function(){
@@ -147,10 +158,18 @@ $('.check-out').datepicker().on('changeDate', function(){
 }).on('hide', function(){
 	 // calculate nights
 	 days();
+	 $('.datepicker-opened').hide();
+}).on('show', function(){
+	$()
+	$('.datepicker-opened').show();
+}).on('clearDate', function(){
+	$('.datepicker-opened').hide();
 });
 
 
-
+$('.check-in').on('click', function(){
+	$('html,body').animate({ scrollTop: "0" });
+});
 
 
 
