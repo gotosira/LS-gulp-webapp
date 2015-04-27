@@ -5,6 +5,39 @@ $('.carousel').carousel({
 	interval: 10000
 });
 
+
+
+//*---- START GEOLOCATION PLUGIN -----*//
+
+	//The callback function executed when the location is fetched successfully.
+    function onGeoSuccess(location) {
+        var strLocation = location.address.country;
+        var strCity = location.address.city;
+        $('.yourcountry').html(strLocation);
+        $('.yourcity').html(strCity);
+
+    }
+	//The callback function executed when the location could not be fetched.
+    function onGeoError(error) {
+        console.log(error);
+    }
+
+
+    function passSuccess(location){
+        var temp_location = location.address.country + ', ' + location.address.city;
+    	// Insert to input text search
+		$('.typeahead').val(temp_location);
+    }
+
+
+// Run on window loads
+window.onload = function () {
+	geolocator.locateByIP(onGeoSuccess, onGeoError, 2, null);
+}
+
+//*---- END GEOLOCATION PLUGIN -----*//
+
+
 /* Disable input typing on mobile */
 $('input[readonly]').on('focus', function(ev) {
     $(this).trigger('blur');
@@ -159,8 +192,9 @@ $('.check-out').datepicker().on('changeDate', function(){
 	 // calculate nights
 	 days();
 	 $('.datepicker-opened').hide();
+	 $('.datepicker').removeClass('datepicker-checkout');
 }).on('show', function(){
-	$()
+	$('.datepicker').addClass('datepicker-checkout');
 	$('.datepicker-opened').show();
 }).on('clearDate', function(){
 	$('.datepicker-opened').hide();
@@ -171,6 +205,12 @@ $('.check-in').on('click', function(){
 	$('html,body').animate({ scrollTop: "0" });
 });
 
+
+$('.glyphicon-screenshot').on('click', function(){
+    // Get Current Country and City
+	geolocator.locateByIP(passSuccess, onGeoError, 2, null);
+
+});
 
 
 /* -- END datepicker --- */

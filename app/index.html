@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-    <title>Works</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0 target-densitydpi=device-dpi" >
+    <title>LateStays, your hotel rooms</title>
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
     <!-- build:css styles/vendor.css -->
@@ -57,7 +57,7 @@
                 </li>
                 <li class="col-lg-7 col-md-8 col-sm-9 col-xs-12">
                     <ul class="nav nav-pills latestay-pills">
-                        <li role="presentation"><a href="#">Subscribe to get exclusive offers <span class="arrow_r"></span></a></li>
+                        <li role="presentation"><a href="#">Subscribe to get exclusive offers<span class="arrow_r"></span></a></li>
                         <li role="presentation"><a href="#">Currency Converter <span class="arrow_r"></span></a></li>
                         <li role="dropdown" class="language-wrapper">
                             <a id="dLabel" class="language-initial" data-target="#" href="" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
@@ -118,27 +118,26 @@
 </nav>
 <div class="content">
     <div class="jumbotron hero">
-
-       <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
-          <!-- Carousel indicator -->
+        <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+            <!-- Carousel indicator
           <ol class="carousel-indicators">
             <li data-target="#carousel" data-slide-to="0" class="active"></li>
             <li data-target="#carousel" data-slide-to="1"></li>
           </ol>
-          <!-- Carousel items -->
-          <div class="carousel-inner">
-            <div class="active item"></div>
-            <div class="item"></div>
-          </div>
-          <!-- Carousel nav -->
-          <a class="carousel-control left" href="#carousel" data-slide="prev">&lsaquo;</a>
-          <a class="carousel-control right" href="#carousel" data-slide="next">&rsaquo;</a>
+          -->
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <div class="active item"></div>
+                <div class="item"></div>
+            </div>
+            <!-- Carousel nav -->
+            <!-- <a class="carousel-control left" href="#carousel" data-slide="prev"></a>
+          <a class="carousel-control right" href="#carousel" data-slide="next"></a>-->
         </div>
-
         <div class="hero-fade-wrapper">
             <div class="container">
                 <h1>LateStays, your hotel rooms <span class='discount-color'>discount store</span></h1>
-                <h3>We only display discounted offers</h3>
+                <h3>We have tons of best deals in <span class="yourcity"></span>, <span class="yourcountry"></span>!</h3>
             </div>
             <div class="row row-extra"></div>
             <div class="form-group">
@@ -165,10 +164,12 @@
                 </div>
                 <div class="input-daterange input-group">
                     <div class="check-wrapper">
-                      <span class="input-group-addon check-add">check-in</span><input type="text" class="form-control check-in" value="" placeholder="Check-in Date" readonly='readonly' readonly/>
+                        <span class="input-group-addon check-add">check-in</span>
+                        <input type="text" class="form-control check-in" value="" placeholder="Check-in Date" readonly='readonly' readonly/>
                     </div>
                     <div class="check-wrapper">
-                      <span class="input-group-addon check-add">check-out</span><input type="text" class="form-control check-out" value="" placeholder="Check-out Date" readonly='readonly' readonly/>
+                        <span class="input-group-addon check-add">check-out</span>
+                        <input type="text" class="form-control check-out" value="" placeholder="Check-out Date" readonly='readonly' readonly/>
                     </div>
                 </div>
                 <button type="button" class="btn primary-btn check-out-button">Search</button>
@@ -178,6 +179,7 @@
                 <div class="form-middle">
                     <div class="extra-input">
                         <input type="text" class="form-control typeahead" value="">
+                        <span class="glyphicon glyphicon-screenshot"></span>
                     </div>
                 </div>
                 <!-- <div class="clear"></div> -->
@@ -213,12 +215,35 @@
                         </ul>
                     </div>
                     <button type="button" class="btn primary-btn check-out-button bottom-out">Search</button>
-
                 </div>
             </div>
         </div>
     </div>
+    
+    <!-- Start content body -->
+    <div class="content_body">
+        <div class="row">
+        
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                      <img src="../images/sample_img.jpg" alt="Phi Phi Resort">
+                        <h3>Phi Phi Resort</h3>
+                        <div class="stars"></div>
+                        <hr/>
+                        <span>From</span>
+                        <span class="currency">B</span>100</div>  
+                        <a href="#" class="btn btn-primary" role="button">Go</a>
+                </div>
+
+            </div>
+            <div class="col-sm-6 col-md-4">content 2</div>
+            <div class="col-sm-6 col-md-4">content 3</div>
+        </div>
+    </div>
+
 </div>
+
+
 <div class="footer">
     <div class="container">
         <h6>Web Design Copyright @ 2015 by Asia Web Direct Co., Ltd.<br/>
@@ -250,6 +275,7 @@ ga('send', 'pageview');
 <script src="/bower_components/jquery/dist/jquery.js"></script>
 <script src="scripts/bootstrap-datepicker.min.js"></script>
 <script src="scripts/typehead.bundle.min.js"></script>
+<script src="scripts/geolocator.min.js"></script>
 <!-- endbower -->
 <!-- endbuild -->
 <!-- build:js scripts/plugins.js -->
