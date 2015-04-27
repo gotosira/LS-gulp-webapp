@@ -1,4 +1,22 @@
 //--- Start Media Query
+
+.alert.alert-warning.alert-dismissible {
+  max-width: 200px;
+  margin: 0 auto;
+  margin-right: 10%;
+  height: 50px;
+}
+.alert.alert-dismissible button.close{
+    font-size: 14px;
+      text-align: left;
+      height: auto;
+      top: -10px !important;
+      right: 0 !important;
+}
+.alert.alert-dismissible > button.close > span:first-child{
+    font-size: 18px;
+}
+
 .dropdown-menu {
     -moz-transition: all 1000ms ease;
     -webkit-transition: all 1000ms ease;
@@ -253,35 +271,35 @@ $def-primary-font-size: 18px;
     position: relative;
     &-en {
         @extend .lang-flag;
-        background-image: url('/images/gb.svg');
+        background-image: url('../images/gb.svg');
     }
     &-th {
         @extend .lang-flag;
-        background-image: url('/images/th.svg');
+        background-image: url('../images/th.svg');
     }
     &-my {
         @extend .lang-flag;
-        background-image: url('/images/my.svg');
+        background-image: url('../images/my.svg');
     }
     &-jp {
         @extend .lang-flag;
-        background-image: url('/images/jp.svg');
+        background-image: url('../images/jp.svg');
     }
     &-kr {
         @extend .lang-flag;
-        background-image: url('/images/kr.svg');
+        background-image: url('../images/kr.svg');
     }
     &-ru {
         @extend .lang-flag;
-        background-image: url('/images/ru.svg');
+        background-image: url('../images/ru.svg');
     }
     &-cn {
         @extend .lang-flag;
-        background-image: url('/images/cn.svg');
+        background-image: url('../images/cn.svg');
     }
     &-id {
         @extend .lang-flag;
-        background-image: url('/images/id.svg');
+        background-image: url('../images/id.svg');
     }
 }
 
@@ -508,7 +526,7 @@ input:active {
 }
 
 .latestay-logo {
-    background: url('/images/LateStaysBeta.svg');
+    background: url('../images/LateStaysBeta.svg');
     width: 100%;
     height: 60px;
     max-width: 200px;
@@ -561,7 +579,7 @@ input:active {
 
 .check-in,
 .check-out {
-    background: url('/images/calendar.svg');
+    background: url('../images/calendar.svg');
     background-size: 20px auto;
     background-repeat: no-repeat;
     background-position: 95% 5px;
@@ -589,20 +607,8 @@ input:active {
     }
 }
 
-.arrow_r {
-    background: url('/images/arrow_r.svg') no-repeat;
-    width: 20px;
-    height: 20px;
-    display: inline-block;
-    vertical-align: middle;
-    float: right;
-    background-size: 20px 20px;
-    margin-left: 10px;
-    position: relative;
-}
-
 .hero {
-    // background: url('/images/hero-bg.jpg') no-repeat;
+    // background: url('../images/hero-bg.jpg') no-repeat;
     background-size: cover;
     min-height: 577px;
     padding: 0;
@@ -724,7 +730,7 @@ input:active {
                 min-width: 220px;
                 float: left;
                 cursor: pointer;
-                background-image: url('/images/search_icn.svg');
+                background-image: url('../images/search_icn.svg');
                 background-repeat: no-repeat;
                 background-size: 20px auto;
                 background-position: 10px;
@@ -781,30 +787,64 @@ input:active {
 .footer {
     padding: 0;
     background: #F1F1F1;
+    .container{
+        width:100%;
+        max-width: 1000px;
+        padding: 0;
+    }
+    
+    @media all and (min-width:320px){
+        .col-xs-12{
+            width:100%;
+        }
+    }
+    @media all and (min-width: 768px){
+    .col-sm-1{
+            width: 15%;
+        }
+    }
+    @media all and (min-width:1200px){
+        .col-lg-1{
+            width:17%;
+        }
+    }
+   
     .col-lg-2 {
-      width: 18%;
+      width: 22%;
     }
     .col-lg-3{
-          width: 23%;
+          width: 26%;
     }
-    .container{
-        max-width: 970px;
 
-    }
     .subscribe-section{
         clear:both;
-        p{
-            text-indent:10%;
+        max-width: 600px;
+        margin: 0 auto;
+        
+        .sign-up{
+              border-radius: 3px 3px 3px 3px;
+              background-color: #a8d010;
+              box-shadow: inset -3.41px -3.657px 0px 0px rgba(0,0,0,0.05);
+              min-width: 124px;
+              max-width: 124px;
+              height: 42px;
+              color: #fff;
+              text-transform: uppercase;
+              border: 0;
+              font-weight: 600;
+              font-size: 14px;
+              text-align: center;
         }
     }
     .subscribe-box{
-      width: 50%;
+      width: 65%;
       background-color: rgba(255, 255, 255, 0.812);
       border-style: none;
       font-size: 14px;
-      padding: 13px 10px 12px 12px;
+      padding: 7px;
       margin-right: 10px;
       float: left;
+      margin-bottom: 30px;
     }
     
     .foot-col{
@@ -815,7 +855,6 @@ input:active {
           text-overflow: ellipsis;
           overflow: hidden;
           white-space: nowrap;
-          padding-right: 30px;
           margin-top: 20px;
           margin-bottom: 20px;
           padding-left: 0;
@@ -827,10 +866,11 @@ input:active {
         .foot-col{
             border:0;
             border-bottom:1px solid #ccc;
+            padding-top:0;
          }
      }
     .arrow{
-                background:url('../images/arrow_r.svg');
+                background:url('../images/arrow_s.svg');
                 width: 12px;
                 height: 12px;
                 display: inline-block;
@@ -849,7 +889,10 @@ input:active {
     .copyright{
         background: #c0d931;
         width:100%;
-        height:114px;
+        height:100%;
+        margin-top: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }
 
@@ -1061,7 +1104,7 @@ input:active {
 }
 
 .powered_by {
-    background: url('../images/powered-by-hotels.svg');
+    background: url('../images/powered_by_hotels.svg');
     background-size: 130px auto;
     display: block;
     width: auto;
@@ -1113,6 +1156,18 @@ input:active {
     0,
     0,
     .06);
+}
+
+.arrow_r{
+  background: url('../images/arrow_r.svg') no-repeat;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  content: "";
+  vertical-align: middle;
+  float: right;
+  margin-left: 10px;
+  background-size: 20px 20px;
 }
 
 .search_footer_result {
@@ -1172,3 +1227,6 @@ input:active {
         margin-left: 10px;
     }
 }
+
+
+

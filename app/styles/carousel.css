@@ -5,6 +5,7 @@
   -o-transition-property: opacity;
   transition-property: opacity;
   left:0 !important;
+
 }
 .carousel-fade .carousel-inner .active {
   opacity: 1;
@@ -36,12 +37,13 @@
     background-position: center center !important;
     width:100%;
     position:absolute;
+    background: rgba(0, 0, 0, 1);
 }
 .item:nth-child(1) {
-  background: url('/images/hero-bg.jpg') no-repeat;
+  background: url('../images/hero-bg.jpg') no-repeat;
 }
 .item:nth-child(2) {
-  background: url('/images/hero-bg-2.jpg') no-repeat;
+  background: url('../images/hero-bg-2.jpg') no-repeat;
 }
 
 .carousel-indicators{

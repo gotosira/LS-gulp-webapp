@@ -76,7 +76,7 @@ var countries = new Bloodhound({
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     limit: 10,
     prefetch: {
-        url: '/scripts/states.json',
+        url: './scripts/states.json',
         filter: function(list) {
             return $.map(list, function(country) {
                 return {

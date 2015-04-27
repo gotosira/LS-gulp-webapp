@@ -1,10 +1,19 @@
 /*global -$ */
-'use strict';
+// 'use strict';
 // generated on 2015-04-21 using generator-gulp-webapp 0.3.0
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var browserSync = require('browser-sync');
 var reload = browserSync.reload;
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+
+gulp.task('jsconcat', function () {
+   return gulp.src('app/scripts/**/*.js')
+              .pipe(concat('all.js'))
+              .pipe(uglify())
+              .pipe(gulp.dest('./dist/scripts'));
+});
 
 gulp.task('styles', function () {
   return gulp.src('app/styles/*.scss')
@@ -23,13 +32,13 @@ gulp.task('styles', function () {
     .pipe(reload({stream: true}));
 });
 
-gulp.task('jshint', function () {
-  return gulp.src('app/scripts/**/*.js')
-    .pipe(reload({stream: true, once: true}))
-    .pipe($.jshint())
-    .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
-});
+// gulp.task('jshint', function () {
+//   return gulp.src('app/scripts/**/*.js')
+//     .pipe(reload({stream: true, once: true}))
+//     .pipe($.jshint())
+//     .pipe($.jshint.reporter('jshint-stylish'))
+//     .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
+// });
 
 gulp.task('html', ['styles'], function () {
   var assets = $.useref.assets({searchPath: ['.tmp', 'app', '.']});
@@ -37,7 +46,7 @@ gulp.task('html', ['styles'], function () {
   return gulp.src('app/*.html')
     .pipe(assets)
     .pipe($.if('*.js', $.uglify()))
-    .pipe($.if('*.css', $.csso()))
+    // .pipe($.if('*.css', $.csso()))
     .pipe(assets.restore())
     .pipe($.useref())
     // .pipe($.if('*.html', $.minifyHtml({conditionals: true, loose: true})))
@@ -118,7 +127,7 @@ gulp.task('wiredep', function () {
     .pipe(gulp.dest('app'));
 });
 
-gulp.task('build', ['jshint',  'html', 'images', 'fonts', 'extras'], function () {
+gulp.task('build', ['jsconcat', 'html', 'images', 'fonts', 'extras'], function () {
   return gulp.src('dist/**/*').pipe($.size({title: 'build', gzip: false}));
 });
 
