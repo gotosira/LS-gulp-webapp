@@ -1,5 +1,23 @@
+$("#review-rate").slider({ id: "review-rate", min: 1, max: 5, range: true, value: [1, 5], step: 0.5 });
+
+$('[data-toggle="tooltip"]').tooltip();
+
 $('.carousel').carousel({
     interval: 10000
+});
+
+$('.helper > span').popover();
+
+$('.alert-show').click(function(){
+    $(this).hide();
+});
+
+$('.star-blue-group').click(function(){
+    $(this).find('.one-star').toggleClass('fade-star');
+});
+
+$('.price-group > button').click(function(){
+     $(this).toggleClass('active');
 });
 
 function onGeoSuccess(location) {

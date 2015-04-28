@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="styles/datepicker-custom.css">
     <link rel="stylesheet" href="styles/typeahead.css">
     <link rel="stylesheet" href="styles/carousel.css">
+    <link rel="stylesheet" href="styles/range.css"
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
@@ -246,23 +247,88 @@
         </div> -->
     
         <!-- Starting Second Page -->
-
-        <div class="alert alert-warning alert-dismissible" role="alert">
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <b>Supersaver</b><br/>
-                Save more than 50% off
-                                <span aria-hidden="true">&times;</span>
-
-            </button>
+        
+        <div class="container search_result_title">
+                <div class="left">
+                    <h2>Bangkok, Thailand</h2>
+                    <p>Thu 30 April 2015 - Fri 01 May 2015, 1 night, 1 room, 2 adults</p>
+                </div>
+                <div class="right">
+                    <button class="btn primary-btn"><div class="glyphicon glyphicon-search"></div>Change Your Search</button>
+                </div>
         </div>
+        
+        <nav class="navbar navbar-default filter-nav">
+                <div class="price-group group">
+                    <div class="navbar-text"> price : </div>
+                    <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-placement="top" title="THB 0 - THB 1,999">$</button>
+                    <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-placement="top" title="THB 2,000 - THB 3,999">$$</button>
+                    <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-placement="top" title="THB 4,000 - THB 5,999">$$$</button>
+                    <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-placement="top" title="THB 6,000 - THB 7,999">$$$$</button>
+                    <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-placement="top" title="THB 8,000 and above">$$$$$</button>
+                </div>
+                <div class="stars-group group">
+                    <div class="navbar-text">stars :</div>
+                    <ul>
+                        <li>
+                            <div class="star-blue-group">
+                                <span class="stars-blue one-star"></span>
+                                <span class="one-star-txt">1</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="star-blue-group">
+                                <span class="stars-blue one-star"></span>
+                                <span class="one-star-txt">2</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="star-blue-group">
+                                <span class="stars-blue one-star"></span>
+                                <span class="one-star-txt">3</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="star-blue-group">
+                                <span class="stars-blue one-star"></span>
+                                <span class="one-star-txt">4</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="star-blue-group">
+                                <span class="stars-blue one-star"></span>
+                                <span class="one-star-txt">5</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="review-group group">
+                     <div class="navbar-text"> reviews : </div>
+                     <ul class="rate-title">
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                     <input id="review-rate" type="text"/><br/>
+                     <ul class="half-rate-title">
+                        <li>1.5</li>
+                        <li>2.5</li>
+                        <li>3.5</li>
+                        <li>4.5</li>
+                    </ul>
+                </div>
+                <button class="btn primary-btn apply-filter">Apply <br/>Filter</button>
+        </nav>
 
         <div class="table-responsive hotel_list">
               <table class="table">
                 <thead class="best_deal">
                     <tr >
-                        <th colspan="4"> Grand Sukhumvit Hotel Bangkok Managed by Accor</th>
+                        <th colspan="4"> <a href="#">Grand Sukhumvit Hotel Bangkok Managed by Accor</a></th>
                         <th class="helper">
-                            <span>?</span>
+                            <span data-toggle="popover" data-placement="top" data-original-title="Supersaver" data-content="Save more than 50% off">?</span>
                         </th>
                     </tr>
 
@@ -270,7 +336,7 @@
                 <tbody>
                     <tr>
                         <td class="hotel_avatar_wrapper">
-                            <img src="images/test_img.jpg" alt="test_img" class="hotel_avatar">
+                            <a href="#"><img src="images/test_img.jpg" alt="test_img" class="hotel_avatar"></a>
                         </td>
                         <td class="rate_title">
                             <div>
@@ -308,14 +374,14 @@
               <table class="table">
                 <thead class="second_best_deal">
                     <tr >
-                        <th colspan="5"> Grand Sukhumvit Hotel Bangkok Managed by Accor </th>
+                        <th colspan="5"> <a href="#">Grand Sukhumvit Hotel Bangkok Managed by Accor </a></th>
                     </tr>
 
                 </thead>
                 <tbody>
                     <tr>
                         <td class="hotel_avatar_wrapper">
-                            <img src="images/test_img.jpg" alt="test_img" class="hotel_avatar">
+                            <a href="#"><img src="images/test_img.jpg" alt="test_img" class="hotel_avatar"></a>
                         </td>
                         <td class="rate_title">
                             <div>
@@ -350,10 +416,11 @@
         </div>
 
         <div class="table-responsive hotel_list no_deal">
+            <a href="#">
               <table class="table">
                 <thead>
                     <tr >
-                        <th colspan="4"> Grand Sukhumvit Hotel Bangkok Managed by Accor <span class="stars-blue"></span></th>
+                        <th colspan="4"> <a href="#">Grand Sukhumvit Hotel Bangkok Managed by Accor</a> <span class="stars-blue"></span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -366,20 +433,25 @@
                         </td>
                       
                         <td class="price_before_after">
-                            <span class="from_price">
+                           <!--  <span class="from_price">
                                 <span class="from">From</span>
                                 <span class="prev_price">
                                     <span>THB</span>
                                     <span>9,999,999</span>
                                 </span>
-                            </span>
+                            </span> -->
                             <span class="to_price">
                                 <span>THB</span><span>9,999,999</span>
                             </span>
                         </td>
-                        
+                       <td class="book_now_btn">
+                             <button type="button" class="btn primary-btn">Book Now</button>
+                             <span class="powered_by"></span>
+                        </td>
+                    </tr>    
                 </tbody>
               </table>
+            </a>
         </div>
         
         <div class="search_footer_result row">
@@ -439,6 +511,7 @@
 <script src="scripts/bootstrap-datepicker.min.js"></script>
 <script src="scripts/typehead.bundle.min.js"></script>
 <script src="scripts/geolocator.min.js"></script>
+<script src="scripts/range.js"></script>
 <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
 <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
 <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>

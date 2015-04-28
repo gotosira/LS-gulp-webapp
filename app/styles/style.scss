@@ -1,10 +1,71 @@
 //--- Start Media Query
-
-.alert.alert-warning.alert-dismissible {
+.yellow-tooltip + .tooltip {opacity:1;  }
+.tooltip > .tooltip-inner { background-color: #fff9ce; color:#494949;padding:5px;font-weight:600;padding:5px 8px;box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);}
+.yellow-tooltip + .tooltip.top > .tooltip-arrow { border-top-color: #fff9ce;}
+#review-rate .tooltip-inner {
+    background-color: #fff9ce; color:#494949;font-weight:600;
+}
+#review-rate .tooltip-arrow {
+    border-top-color: #fff9ce;
+}
+.helper .popover {
+  background: #fff9ce;
+  border: none;
+  color: #000;
+}
+.helper .popover.top > .arrow:after {
+  border-top-color: #fff9ce;
+}
+.helper h3.popover-title {
+  background: none;
+  border: none;
+  padding-bottom: 0;
+}
+.helper .popover-content {
+  padding-top: 5px;
+  font-size: 12px;
+}
+.alert.alert-warning.alert-show {
   max-width: 200px;
   margin: 0 auto;
   margin-right: 10%;
   height: 50px;
+  position: absolute;
+  right: 0;
+  bottom: 50px;
+  padding-top: 0;
+  display:none;
+  &:after, &:before {
+    top: 100%;
+    left: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+  &:after {
+    border-top-color: #faebcc;
+    border-width: 10px;
+    margin-left: 10px;
+}
+
+  .close{
+    text-align:left;
+    span:first-child{
+        font-size:16px !important;
+    }
+    span:nth-of-type(2){
+        font-size:12px !important;
+    }
+    .close_btn{
+        top:-25px;
+        left:10px;
+        position:relative;
+        font-size:16px;
+    }
+  }
 }
 .alert.alert-dismissible button.close{
     font-size: 14px;
@@ -956,7 +1017,10 @@ input:active {
     max-width: 960px;
     max-height: 132px;
     border: 1px solid #e33a1c;
-
+    a, a:hover, a:focus{
+        text-decoration:none;
+        color:inherit;
+    }
     .table {
         margin-bottom: 0;
         min-width: 900px;
@@ -1005,6 +1069,7 @@ input:active {
         font-size: 12px;
     }
     .helper {
+        cursor:pointer;
         span {
             background: #b8331c;
             color: #fff;
@@ -1126,10 +1191,16 @@ input:active {
 }
 
 .no_deal {
+    .book_now_btn {
+      top: -30px;
+      position: relative;
+      right: 10px;
+    }
     th {
-        padding-top: 0 !important;
+        padding-top: 5px !important;
         padding-bottom: 0 !important;
         margin: 0 !important;
+        font-size: 14px;
     }
     .stars-blue {
         display: inline-block;
@@ -1138,19 +1209,18 @@ input:active {
     }
     .rate_title {
         border-right: 0 !important;
-        float: left;
-        width: 50%;
+        width: 62%;
     }
     .price_before_after {
-        border-right: 0 !important;
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
-        margin: 0 !important;
-        position: relative;
-        top: -18px;
-        float: right;
-        width: 50%;
-        text-align: right;
+          border-right: 0 !important;
+          padding-top: 0 !important;
+          padding-bottom: 0 !important;
+          margin: 0 !important;
+          position: relative;
+          text-align: left;
+          line-height: 0;
+          margin: 0 !important;
+          padding-left: 20px !important;
     }
     border: 1px solid rgba(0,
     0,
@@ -1225,6 +1295,136 @@ input:active {
         border-color: transparent transparent transparent #a7d100;
         display: inline-block;
         margin-left: 10px;
+    }
+}
+
+.search_result_title{
+    max-width:1000px;
+    .left{
+        display: inline-block;
+        float:left;
+        h2{
+            font-weight:600;
+        }
+    }
+    .right{
+        margin-top:50px;
+        margin-left:20px;
+
+        .btn{
+            margin-left: 20px;
+            border-radius:10px;
+            font-size:14px;
+        }
+        .glyphicon{
+            margin-right:10px;
+        }
+    }
+
+}
+
+.filter-nav{
+    margin:0 auto;
+    max-width:960px;
+    color: #474747; 
+    text-transform:uppercase;
+    font-weight:600;
+    border: 1px solid #ccc !important;
+    border-radius:2px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    div{
+        float:left;
+
+        ul{
+            float:left;
+            li{
+                float:left;
+            }
+        }
+    }
+    .navbar-btn{
+        min-width:initial;
+        width:56px;
+        height:32px;
+        text-align:center;
+        margin-right:4px;
+        border-radius:5px;
+        font-weight:500;
+        box-shadow:none;
+        &.active{
+            background:#1275ca;
+            color:#fff;
+        }
+    }
+    
+    .group{
+        border-right: 1px solid #ccc;
+        height: 54px;
+    }
+    .price-group{
+        padding-right: 5px;
+        .navbar-text {
+            margin-right: 10px;
+        }
+    }
+    .stars-group{
+        padding-top: 2px;
+        width: 26%;
+        cursor:pointer;
+        .star-blue-group {
+          text-align: center;
+          .one-star-txt{
+            font-size:12px;
+            top:-5px;
+            position: relative;
+            font-weight:500;
+          }
+        }
+        .one-star{
+              width: 28px;
+              height: 23px;
+              background-size: 122px 22px;
+              background-repeat: no-repeat;
+              margin-right: 3px;
+        }
+        .fade-star{
+              background-image:url('../images/5stars-fade.svg');
+        }
+    }
+    .review-group{
+        width: 26.65%;
+        font-size:12px;
+        color:#858585;
+        .rate-title{
+            li{
+                margin-right: 22px;
+            }
+        }
+        .half-rate-title{
+            li{
+                margin-right: 0px;
+                margin-left: 12px;
+            }
+        }
+    }
+    .apply-filter{
+          float: right;
+          padding: 0;
+          min-width: inherit;
+          max-width: 71px;
+          padding-top: 10px;
+          padding-bottom: 42px;
+          padding-left: 14px;
+          padding-right: 20px;
+          font-size: 12px;
+          box-shadow: none;
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+          margin-left: 0;
+          border: 1px solid #0085d3;
+          text-transform: capitalize;
+          font-weight: 600;
     }
 }
 
