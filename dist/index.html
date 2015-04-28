@@ -1,0 +1,428 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0 target-densitydpi=device-dpi" >
+    <title>LateStays, your hotel rooms</title>
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+    
+
+
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script src="https://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="styles/main.css">
+
+    <script src="scripts/vendor/modernizr.js"></script>
+</head>
+<body>
+<div class="datepicker-opened"></div>
+<nav class="navbar navbar-default navbar-fixed-top latestay-bar" role="navigation">
+    <div class="container-fluid latestay-max">
+        <!-- mobile view for menu header -->
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">
+                <div class="latestay-logo"></div>
+            </a>
+        </div>
+        <!-- mobile view for body -->
+        <div class="collapse navbar-collapse">
+            <ul>
+                <li class="col-lg-5 col-md-4 col-sm-3 col-xs-12">
+                    <div class="latestay-logo"></div>
+                </li>
+                <li class="col-lg-7 col-md-8 col-sm-9 col-xs-12">
+                    <ul class="nav nav-pills latestay-pills">
+                        <li role="presentation"><a href="#">Subscribe to get exclusive offers<span class="arrow_r"></span></a></li>
+                        <li role="presentation"><a href="#">Currency Converter <span class="arrow_r"></span></a></li>
+                        <li role="dropdown" class="language-wrapper">
+                            <a id="dLabel" class="language-initial" data-target="#" href="" data-toggle="dropdown" aria-haspopup="true" role="button" aria-expanded="false">
+                                <span class="lang-flag-en"></span>
+                                <span class="extra-text">English</span>
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu language" role="menu" aria-labelledby="dLabel">
+                                <li role="presentation">
+                                    <a data-target="#">
+                                        <span class="lang-flag-th"></span>
+                                        <span> ไทย </span>
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a data-target="#">
+                                        <span class="lang-flag-my"></span>
+                                        <span> Bahasa Malaysia </span>
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a data-target="#">
+                                        <span class="lang-flag-jp"></span>
+                                        <span>日本語 </span>
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a data-target="#">
+                                        <span class="lang-flag-kr"></span>
+                                        <span> 한국어 </span>
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a data-target="#">
+                                        <span class="lang-flag-ru"></span>
+                                        <span>Русский </span>
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a data-target="#">
+                                        <span class="lang-flag-cn"></span>
+                                        <span> 简体中文 </span>
+                                    </a>
+                                </li>
+                                <li role="presentation">
+                                    <a data-target="#">
+                                        <span class="lang-flag-id"></span>
+                                        <span> Bahasa Indonesia </span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="content">
+    <div class="jumbotron hero">
+        <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
+            <!-- Carousel indicator
+          <ol class="carousel-indicators">
+            <li data-target="#carousel" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel" data-slide-to="1"></li>
+          </ol>
+          -->
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                <div class="active item"></div>
+                <div class="item"></div>
+            </div>
+            <!-- Carousel nav -->
+            <!-- <a class="carousel-control left" href="#carousel" data-slide="prev"></a>
+          <a class="carousel-control right" href="#carousel" data-slide="next"></a>-->
+        </div>
+        <div class="hero-fade-wrapper">
+            <div class="container">
+                <h1>LateStays, your hotel rooms <span class='discount-color'>discount store</span></h1>
+                <h3>We have tons of best deals in <span class="yourcity"></span>, <span class="yourcountry"></span>!</h3>
+            </div>
+            <div class="row row-extra"></div>
+            <div class="form-group">
+                <div class="btn-group country-group">
+                    <button type="button" class="btn btn-default dropdown-toggle btn-int" data-toggle="dropdown">
+                        <span class="btn-text selected">Thailand</span>
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a>Singapore</a></li>
+                        <li><a>Japan</a></li>
+                        <li><a>South Korea</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group area-group">
+                    <button type="button" class="btn btn-default dropdown-toggle btn-int" data-toggle="dropdown">
+                        <span class="btn-text selected">Bangkok</span> <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a>Phuket</a></li>
+                        <li><a>Chiangmai</a></li>
+                        <li><a>Ubon</a></li>
+                    </ul>
+                </div>
+                <div class="input-daterange input-group">
+                    <div class="check-wrapper">
+                        <span class="input-group-addon check-add">check-in</span>
+                        <input type="text" class="form-control check-in" value="" placeholder="Check-in Date" readonly='readonly' readonly/>
+                    </div>
+                    <div class="check-wrapper">
+                        <span class="input-group-addon check-add">check-out</span>
+                        <input type="text" class="form-control check-out" value="" placeholder="Check-out Date" readonly='readonly' readonly/>
+                    </div>
+                </div>
+                <button type="button" class="btn primary-btn check-out-button">Search</button>
+                <div class="extra">
+                    <p><span class="extra-symbol">+</span> Looking for more hotels? Type Here</p>
+                </div>
+                <div class="form-middle">
+                    <div class="extra-input">
+                        <input type="text" class="form-control typeahead" value="">
+                        <span class="glyphicon glyphicon-screenshot"></span>
+                    </div>
+                </div>
+                <!-- <div class="clear"></div> -->
+                <div class="form-bottom">
+                    <div class="cal-night"> 0 NIGHT(S) </div>
+                    <div class="btn-group btn-room">
+                        <button type="button" class="btn btn-default dropdown-toggle btn-int" data-toggle="dropdown">
+                            <span class="btn-text">1 Room</span> <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a>2 Rooms</a></li>
+                            <li><a>3 Rooms</a></li>
+                            <li><a>4 Rooms</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group btn-adult">
+                        <button type="button" class="btn btn-default dropdown-toggle btn-int" data-toggle="dropdown">
+                            <span class="btn-text">2 Adults</span> <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a>1 Adult</a></li>
+                            <li><a>2 Adults</a></li>
+                            <li><a>3 Adults</a></li>
+                        </ul>
+                    </div>
+                    <div class="btn-group btn-child">
+                        <button type="button" class="btn btn-default dropdown-toggle btn-int" data-toggle="dropdown">
+                            <span class="btn-text">0 Child</span> <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a>1 Child</a></li>
+                            <li><a>2 Children</a></li>
+                        </ul>
+                    </div>
+                    <button type="button" class="btn primary-btn check-out-button bottom-out">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Start content body -->
+    <div class="content_body">
+
+     <!-- First Page -->
+      <!--   <div class="row">
+        
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                      <img src="../images/sample_img.jpg" alt="Phi Phi Resort">
+                        <h3>Phi Phi Resort</h3>
+                        <div class="stars"></div>
+                        <hr/>
+
+                        <ul class="deal_price_list">
+                        <li><div class="from">From</div><span class="currency_abbrev">฿ 14,283</span></li>
+                        <li class="discount_price"><span class="hotel_abbrev">THB</span>9,284<div class="nightly">nightly price</div></li>
+                        <li class="go_wrapper"><a href="javascript:_hcom_ref('http://www.hotels.com/PPCHotelDetails?hotelid=338994&arrivalDate=18%2F05%2F2015&departureDate=21%2F05%2F2015', '338994', 'guest_rooms')" class="go">GO</a><span class="hotel-com-logo"></span></li>
+                        </ul>
+                </div>
+
+            </div>
+            <div class="col-sm-6 col-md-4">content 2</div>
+            <div class="col-sm-6 col-md-4">content 3</div>
+        </div> -->
+    
+        <!-- Starting Second Page -->
+
+        <div class="alert alert-warning alert-dismissible" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <b>Supersaver</b><br/>
+                Save more than 50% off
+                                <span aria-hidden="true">&times;</span>
+
+            </button>
+        </div>
+
+        <div class="table-responsive hotel_list">
+              <table class="table">
+                <thead class="best_deal">
+                    <tr >
+                        <th colspan="4"> Grand Sukhumvit Hotel Bangkok Managed by Accor</th>
+                        <th class="helper">
+                            <span>?</span>
+                        </th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="hotel_avatar_wrapper">
+                            <img src="images/test_img.jpg" alt="test_img" class="hotel_avatar">
+                        </td>
+                        <td class="rate_title">
+                            <div>
+                                <span class="stars-blue three-half-star"></span>
+                                <div class="location"><span class="loc_icn"></span>Longtexxttttttttt - Longtexxttttttttt</div>
+                            </div>
+                            <div>
+                                <span class="guest_rate">Guest Rating <span>5.0 / 5.0</span></span>
+                            </div>
+                        </td>
+                        <td class="special_deal_title">
+                            <span>Special Deal: Save 100%</span>
+                        </td>
+                        <td class="price_before_after">
+                            <div class="from_price">
+                                <span class="from">From</span>
+                                <span class="prev_price">
+                                    <span>THB</span>
+                                    <span>9,999,999</span>
+                                </span>
+                            </div>
+                            <div class="to_price">
+                                <span>THB</span><span>9,999,999</span>
+                            </div>
+                        </td>
+                        <td class="book_now_btn">
+                             <button type="button" class="btn primary-btn">Book Now</button>
+                             <span class="powered_by"></span>
+                        </td>
+                </tbody>
+              </table>
+        </div>
+        
+        <div class="table-responsive hotel_list second_best">
+              <table class="table">
+                <thead class="second_best_deal">
+                    <tr >
+                        <th colspan="5"> Grand Sukhumvit Hotel Bangkok Managed by Accor </th>
+                    </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="hotel_avatar_wrapper">
+                            <img src="images/test_img.jpg" alt="test_img" class="hotel_avatar">
+                        </td>
+                        <td class="rate_title">
+                            <div>
+                                <span class="stars-blue two-half-star"></span>
+                                <div class="location"><span class="loc_icn"></span>Longtexxttttttttt - Longtexxttttttttt</div>
+                            </div>
+                            <div>
+                                <span class="guest_rate">Guest Rating <span>5.0 / 5.0</span></span>
+                            </div>
+                        </td>
+                        <td class="special_deal_title">
+                            <span>Special Deal: Save 100%</span>
+                        </td>
+                        <td class="price_before_after">
+                            <div class="from_price">
+                                <span class="from">From</span>
+                                <span class="prev_price">
+                                    <span>THB</span>
+                                    <span>9,999,999</span>
+                                </span>
+                            </div>
+                            <div class="to_price">
+                                <span>THB</span><span>9,999,999</span>
+                            </div>
+                        </td>
+                        <td class="book_now_btn">
+                             <button type="button" class="btn primary-btn">Book Now</button>
+                             <span class="powered_by"></span>
+                        </td>
+                </tbody>
+              </table>
+        </div>
+
+        <div class="table-responsive hotel_list no_deal">
+              <table class="table">
+                <thead>
+                    <tr >
+                        <th colspan="4"> Grand Sukhumvit Hotel Bangkok Managed by Accor <span class="stars-blue"></span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="rate_title">
+                            <div>
+                                <span class="location"><span class="loc_icn"></span>Longtexxttttttttt - Longtexxttttttttt</span>
+                                <span class="guest_rate">Guest Rating <span>5.0 / 5.0</span></span>
+                            </div>
+                        </td>
+                      
+                        <td class="price_before_after">
+                            <span class="from_price">
+                                <span class="from">From</span>
+                                <span class="prev_price">
+                                    <span>THB</span>
+                                    <span>9,999,999</span>
+                                </span>
+                            </span>
+                            <span class="to_price">
+                                <span>THB</span><span>9,999,999</span>
+                            </span>
+                        </td>
+                        
+                </tbody>
+              </table>
+        </div>
+        
+        <div class="search_footer_result row">
+            <p class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Your search matched <span>762</span> of our <span>762</span> hotels : Showing results <span>1</span>-<span>20</span></p>
+            <button class="btn col-xs-12 col-sm-6 col-md-6 col-lg-6"> View <span>20</span>-<span>40</span><span class="continue"></span></button>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<div class="footer">
+    <div class="container">
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 foot-col"><span class="arrow"></span>About Us</div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 foot-col"><span class="arrow"></span>Privacy & Copyright Policy</div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 foot-col"><span class="arrow"></span>Legal Notice</div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 foot-col"><span class="arrow"></span>Sign Up Newsletter</div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 foot-col no-border"><span class="arrow"></span>Contact Us</div>
+
+        <div class="subscribe-section">
+            <p>Subscribe to receive exclusive deals</p>
+            <input class="subscribe-box" />
+            <button class="btn sign-up">sign up now</button>
+        </div>
+     
+    </div>
+       <div class="copyright">
+            <h6>Web Design Copyright @ 2015 by Asia Web Direct Co., Ltd.<br/>
+              IATA TIDS No.96-6 2482 4 <br/> PATA Member ID: 1879
+            </h6>
+        </div>
+</div>
+
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+// (function(b, o, i, l, e, r) {
+//     b.GoogleAnalyticsObject = l;
+//     b[l] || (b[l] =
+//         function() {
+//             (b[l].q = b[l].q || []).push(arguments)
+//         });
+//     b[l].l = +new Date;
+//     e = o.createElement(i);
+//     r = o.getElementsByTagName(i)[0];
+//     e.src = '//www.google-analytics.com/analytics.js';
+//     r.parentNode.insertBefore(e, r)
+// }(window, document, 'script', 'ga'));
+// ga('create', 'UA-XXXXX-X');
+// ga('send', 'pageview');
+</script>
+
+<script src="scripts/all.js"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
