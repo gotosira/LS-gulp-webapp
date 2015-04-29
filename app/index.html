@@ -245,8 +245,9 @@
             <div class="col-sm-6 col-md-4">content 2</div>
             <div class="col-sm-6 col-md-4">content 3</div>
         </div> -->
-    
-        <!-- Starting Second Page -->
+    <!-- End First Page -->
+
+    <!-- Starting Second Page -->
         
         <div class="container search_result_title">
                 <div class="left">
@@ -255,71 +256,79 @@
                 </div>
                 <div class="right">
                     <button class="btn primary-btn"><div class="glyphicon glyphicon-search"></div>Change Your Search</button>
+                    <!-- mobile view for filter  -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle filter-wrapper-icon" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="filter-title">Filter</span>
+                            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                        </button>
+                    </div>
                 </div>
         </div>
         
-        <nav class="navbar navbar-default filter-nav">
-                <div class="price-group group">
-                    <div class="navbar-text"> price : </div>
-                    <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-placement="top" title="THB 0 - THB 1,999">$</button>
-                    <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-placement="top" title="THB 2,000 - THB 3,999">$$</button>
-                    <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-placement="top" title="THB 4,000 - THB 5,999">$$$</button>
-                    <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-placement="top" title="THB 6,000 - THB 7,999">$$$$</button>
-                    <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-placement="top" title="THB 8,000 and above">$$$$$</button>
-                </div>
-                <div class="stars-group group">
-                    <div class="navbar-text">stars :</div>
-                    <ul>
-                        <li>
-                            <div class="star-blue-group">
-                                <span class="stars-blue one-star one-rate"></span>
-                                <span class="one-star-txt">1</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="star-blue-group">
-                                <span class="stars-blue one-star two-rate"></span>
-                                <span class="one-star-txt">2</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="star-blue-group">
-                                <span class="stars-blue one-star three-rate"></span>
-                                <span class="one-star-txt">3</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="star-blue-group">
-                                <span class="stars-blue one-star four-rate"></span>
-                                <span class="one-star-txt">4</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="star-blue-group">
-                                <span class="stars-blue one-star five-rate"></span>
-                                <span class="one-star-txt">5</span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="review-group group">
-                     <div class="navbar-text"> reviews : </div>
-                     <ul class="rate-title">
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                    </ul>
-                     <input id="review-rate" type="text"/><br/>
-                     <ul class="half-rate-title">
-                        <li>1.5</li>
-                        <li>2.5</li>
-                        <li>3.5</li>
-                        <li>4.5</li>
-                    </ul>
-                </div>
-                <button class="btn primary-btn apply-filter">Apply <br/>Filter</button>
+        <!-- body view for filter -->
+        <nav class="navbar navbar-default filter-nav collapse navbar-collapse">
+                    <div class="price-group group">
+                        <div class="navbar-text"> price : </div>
+                        <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-placement="top" title="THB 0 - THB 1,999"><span class="symbol">$ </span><span class="price_name">Budget</span></button>
+                        <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-placement="top" title="THB 2,000 - THB 3,999"><span class="symbol">$$</span><span class="price_name">Affordable</span></button>
+                        <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-placement="top" title="THB 4,000 - THB 5,999"><span class="symbol">$$$</span><span class="price_name">Mid-Range</span></button>
+                        <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-placement="top" title="THB 6,000 - THB 7,999"><span class="symbol">$$$$</span><span class="price_name">Enthusiatic</span></button>
+                        <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-placement="top" title="THB 8,000 and above"><span class="symbol">$$$$$</span><span class="price_name">High-End</span></button>
+                    </div>
+                    <div class="stars-group group">
+                        <div class="navbar-text">stars :</div>
+                        <ul>
+                            <li>
+                                <div class="star-blue-group">
+                                    <span class="stars-blue one-star one-rate"></span>
+                                    <span class="one-star-txt">1</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="star-blue-group">
+                                    <span class="stars-blue one-star two-rate"></span>
+                                    <span class="one-star-txt">2</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="star-blue-group">
+                                    <span class="stars-blue one-star three-rate"></span>
+                                    <span class="one-star-txt">3</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="star-blue-group">
+                                    <span class="stars-blue one-star four-rate"></span>
+                                    <span class="one-star-txt">4</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="star-blue-group">
+                                    <span class="stars-blue one-star five-rate"></span>
+                                    <span class="one-star-txt">5</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="review-group group">
+                         <div class="navbar-text"> reviews : </div>
+                         <ul class="rate-title">
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                            <li>5</li>
+                        </ul>
+                         <input id="review-rate" type="text"/><br/>
+                         <ul class="half-rate-title">
+                            <li>1.5</li>
+                            <li>2.5</li>
+                            <li>3.5</li>
+                            <li>4.5</li>
+                        </ul>
+                    </div>
+                    <button class="btn primary-btn apply-filter"><p>Apply</p></button>
         </nav>
 
         <div class="table-responsive hotel_list">
@@ -348,7 +357,7 @@
                             </div>
                         </td>
                         <td class="special_deal_title">
-                            <span>Special Deal: Save 100%</span>
+                            <span>Special Deal blah blah blah blah blah: Save 100%</span>
                         </td>
                         <td class="price_before_after">
                             <div class="from_price">
@@ -420,7 +429,7 @@
               <table class="table">
                 <thead>
                     <tr >
-                        <th colspan="4"> <a href="#">Grand Sukhumvit Hotel Bangkok Managed by Accor</a> <span class="stars-blue"></span></th>
+                        <th colspan="4"> <a href="#">Grand Sukhumvit Hotel Bangkok Managed by Accor</a> <span class="stars-blue no-stars"></span></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -456,22 +465,23 @@
         
         <div class="search_footer_result row">
             <p class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Your search matched <span>762</span> of our <span>762</span> hotels : Showing results <span>1</span>-<span>20</span></p>
-            <button class="btn col-xs-12 col-sm-6 col-md-6 col-lg-6"> View <span>20</span>-<span>40</span><span class="continue"></span></button>
+            <button class="btn col-xs-12 col-sm-6 col-md-6 col-lg-6"> View asdfsdfasfdsdfsadfs<span class="continue"></span></button>
         </div>
 
     </div>
 
-
+    <!-- End Second Page -->
+    
 </div>
 
 
 <div class="footer">
     <div class="container">
-        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 foot-col"><span class="arrow"></span>About Us</div>
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 foot-col"><span class="arrow"></span>Privacy & Copyright Policy</div>
-        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 foot-col"><span class="arrow"></span>Legal Notice</div>
-        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 foot-col"><span class="arrow"></span>Sign Up Newsletter</div>
-        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 foot-col no-border"><span class="arrow"></span>Contact Us</div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 foot-col"><span class="arrow"></span><a href="#">About Us</a></div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 foot-col"><span class="arrow"></span><a href="#">Privacy & Copyright Policy</a></div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 foot-col"><span class="arrow"></span><a href="#"><a href="#">Legal Notice</a></div>
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12 foot-col"><span class="arrow"></span><a href="#">Sign Up Newsletter</a></div>
+        <div class="col-lg-1 col-md-1 col-sm-1 col-xs-12 foot-col no-border"><span class="arrow"></span><a href="#">Contact Us</a></div>
 
         <div class="subscribe-section">
             <p>Subscribe to receive exclusive deals</p>
@@ -512,6 +522,9 @@
 <script src="scripts/typehead.bundle.min.js"></script>
 <script src="scripts/geolocator.min.js"></script>
 <script src="scripts/range.js"></script>
+<!-- endbuild -->
+
+<!-- build:js scripts/bootstrap.js -->
 <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/affix.js"></script>
 <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/alert.js"></script>
 <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/dropdown.js"></script>
@@ -525,6 +538,7 @@
 <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/collapse.js"></script>
 <script src="/bower_components/bootstrap-sass-official/assets/javascripts/bootstrap/tab.js"></script>
 <!-- endbuild -->
+
 <!-- build:js scripts/main.js -->
 <script src="scripts/main.js"></script>
 <!-- endbuild -->
