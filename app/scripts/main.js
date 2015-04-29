@@ -13,7 +13,31 @@ $('.alert-show').click(function(){
 });
 
 $('.star-blue-group').click(function(){
-    $(this).find('.one-star').toggleClass('fade-star');
+
+    $('.one-star').addClass('fade-star');
+
+    if($(this).find('.one-star').hasClass('one-rate')){
+        $('.one-rate').removeClass('fade-star');
+    }else if($(this).find('.one-star').hasClass('two-rate')){
+        $('.one-rate').removeClass('fade-star');
+        $('.two-rate').removeClass('fade-star');
+    }else if($(this).find('.one-star').hasClass('three-rate')){
+        $('.one-rate').removeClass('fade-star');
+        $('.two-rate').removeClass('fade-star');
+        $('.three-rate').removeClass('fade-star');
+    }else if($(this).find('.one-star').hasClass('four-rate')){
+        $('.one-rate').removeClass('fade-star');
+        $('.two-rate').removeClass('fade-star');
+        $('.three-rate').removeClass('fade-star');
+        $('.four-rate').removeClass('fade-star');
+    }else if($(this).find('.one-star').hasClass('five-rate')){
+        $('.one-rate').removeClass('fade-star');
+        $('.two-rate').removeClass('fade-star');
+        $('.three-rate').removeClass('fade-star');
+        $('.four-rate').removeClass('fade-star');
+        $('.five-rate').removeClass('fade-star');
+    }
+    
 });
 
 $('.price-group > button').click(function(){
