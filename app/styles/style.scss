@@ -562,6 +562,9 @@ $def-primary-font-size: 18px;
 .content_body {
   background: #f1f1f1;
   padding-top: 5px;
+  h3{
+        font-weight: 600;
+    }
 }
 
 .lang-flag {
@@ -832,6 +835,7 @@ input:active {
     background: -o-linear-gradient(top, #0387d4 0%, #036fc5 65%, #0367c0 100%);
     background: -ms-linear-gradient(top, #0387d4 0%, #036fc5 65%, #0367c0 100%);
     background: linear-gradient(to bottom, #0387d4 0%, #036fc5 65%, #0367c0 100%);
+
 }
 
 .latestay-logo {
@@ -1708,4 +1712,30 @@ input:active {
     }
 }
 
+.off{
+  background: #fc0600;
+  color: #fff;
+  max-width: 152px;
+  padding-top: 10px 15px;
+  display: block;
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+  top: -60px;
+  left: 59%;
+}
 
+.deal_price_list > li {
+  width: 33%;
+  float: left;
+  height: 100%;
+}
+ul.deal_price_list {
+  height: auto;
+  min-height: 60px;
+}
+
+.thumbnail{
+    max-width:372px;
+}
