@@ -14,29 +14,31 @@ $('.alert-show').click(function(){
 
 $('.star-blue-group').click(function(){
 
-    $('.one-star').addClass('fade-star');
+    $(this).find('.one-star').toggleClass('fade-star');
 
-    if($(this).find('.one-star').hasClass('one-rate')){
-        $('.one-rate').removeClass('fade-star');
-    }else if($(this).find('.one-star').hasClass('two-rate')){
-        $('.one-rate').removeClass('fade-star');
-        $('.two-rate').removeClass('fade-star');
-    }else if($(this).find('.one-star').hasClass('three-rate')){
-        $('.one-rate').removeClass('fade-star');
-        $('.two-rate').removeClass('fade-star');
-        $('.three-rate').removeClass('fade-star');
-    }else if($(this).find('.one-star').hasClass('four-rate')){
-        $('.one-rate').removeClass('fade-star');
-        $('.two-rate').removeClass('fade-star');
-        $('.three-rate').removeClass('fade-star');
-        $('.four-rate').removeClass('fade-star');
-    }else if($(this).find('.one-star').hasClass('five-rate')){
-        $('.one-rate').removeClass('fade-star');
-        $('.two-rate').removeClass('fade-star');
-        $('.three-rate').removeClass('fade-star');
-        $('.four-rate').removeClass('fade-star');
-        $('.five-rate').removeClass('fade-star');
-    }
+    // $('.one-star').addClass('fade-star');
+
+    // if($(this).find('.one-star').hasClass('one-rate')){
+    //     $('.one-rate').removeClass('fade-star');
+    // }else if($(this).find('.one-star').hasClass('two-rate')){
+    //     $('.one-rate').removeClass('fade-star');
+    //     $('.two-rate').removeClass('fade-star');
+    // }else if($(this).find('.one-star').hasClass('three-rate')){
+    //     $('.one-rate').removeClass('fade-star');
+    //     $('.two-rate').removeClass('fade-star');
+    //     $('.three-rate').removeClass('fade-star');
+    // }else if($(this).find('.one-star').hasClass('four-rate')){
+    //     $('.one-rate').removeClass('fade-star');
+    //     $('.two-rate').removeClass('fade-star');
+    //     $('.three-rate').removeClass('fade-star');
+    //     $('.four-rate').removeClass('fade-star');
+    // }else if($(this).find('.one-star').hasClass('five-rate')){
+    //     $('.one-rate').removeClass('fade-star');
+    //     $('.two-rate').removeClass('fade-star');
+    //     $('.three-rate').removeClass('fade-star');
+    //     $('.four-rate').removeClass('fade-star');
+    //     $('.five-rate').removeClass('fade-star');
+    // }
     
 });
 
@@ -44,12 +46,39 @@ $('.price-group > button').click(function(){
      $(this).toggleClass('active');
 });
 
+
+//  $('.sign-up').on('click', function (ev) {
+//         // ev.preventDefault();
+//         // if($('.subscribe-box').val() != ""){
+//         //     $("#sign-up-box").modal("hide");
+//         // }else{
+//         //      $("#sign-up-box").load(target, function () {
+//         //         $("#sign-up-box").modal("show");
+//         //     });
+//         // }
+       
+        
+// });
+$('#sign-up-box').modal({ show: false});
+
+$('.sign-up').on('click', function(){
+    var temp_email = $('.subscribe-box').val();
+    if(temp_email != ""){
+        $('.modal-email').html(temp_email);
+        $('#sign-up-box').modal('show');
+    }else{
+        // do nothing
+    }
+});
+
+
 function onGeoSuccess(location) {
     var strLocation = location.address.country;
     var strCity = location.address.city;
+
+ 
     $('.yourcountry').html(strLocation);
     $('.yourcity').html(strCity);
-
 }
 
 function onGeoError(error) {
@@ -65,7 +94,7 @@ function passSuccess(location) {
 
 
 window.onload = function() {
-    geolocator.locateByIP(onGeoSuccess, onGeoError, 2, null);
+    geolocator.locateByIP(onGeoSuccess, onGeoError, 0, null);
 }
 
 
@@ -196,7 +225,7 @@ function days() {
 
 var dateToday = new Date();
 $('.input-daterange').datepicker({
-    format: "dd/mm/yyyy",
+    format: "dd-mm-yyyy",
     language: "en",
     startDate: dateToday
 });
