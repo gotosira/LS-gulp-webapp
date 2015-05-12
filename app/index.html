@@ -26,7 +26,7 @@
     <link rel="stylesheet" href="styles/datepicker-custom.css">
     <link rel="stylesheet" href="styles/typeahead.css">
     <link rel="stylesheet" href="styles/carousel.css">
-    <link rel="stylesheet" href="styles/range.css"
+    <link rel="stylesheet" href="styles/range.css">
     <!-- endbuild -->
 
     <!-- build:js scripts/vendor/modernizr.js -->
@@ -118,22 +118,29 @@
     </div>
 </nav>
 <div class="content">
+    <!-- Head part -->
     <div class="jumbotron hero">
         <div id="carousel" class="carousel slide carousel-fade" data-ride="carousel">
-            <!-- Carousel indicator
-          <ol class="carousel-indicators">
-            <li data-target="#carousel" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel" data-slide-to="1"></li>
-          </ol>
-          -->
-            <!-- Carousel items -->
+         
             <div class="carousel-inner">
-                <div class="active item"></div>
-                <div class="item"></div>
+                <div class="active item">
+                    <div class="image-title">Maldives island</div>
+                </div>
+                <div class="item">
+                    <div class="image-title">Beijing, China at the Imperial City, North Gate</div>
+                </div>
+                <div class="item">
+                    <div class="image-title">Matsumoto Castle In Winter, Japan</div>
+                </div>
+                <div class="item">
+                    <div class="image-title">Grand Palace Bangkok, Thailand</div>
+                </div>
+                <div class="item">
+                    <div class="image-title">Pura Ulun Danu Bratan Temple, Bali, Indonesia</div>
+                </div>
             </div>
-            <!-- Carousel nav -->
-            <!-- <a class="carousel-control left" href="#carousel" data-slide="prev"></a>
-          <a class="carousel-control right" href="#carousel" data-slide="next"></a>-->
+
+    
         </div>
         <div class="hero-fade-wrapper">
             <div class="container">
@@ -142,7 +149,7 @@
             </div>
             <div class="row row-extra"></div>
             <div class="form-group">
-                <div class="btn-group country-group">
+           <!-- <div class="btn-group country-group">
                     <button type="button" class="btn btn-default dropdown-toggle btn-int" data-toggle="dropdown">
                         <span class="btn-text selected">Thailand</span>
                         <span class="caret"></span>
@@ -162,6 +169,10 @@
                         <li><a>Chiangmai</a></li>
                         <li><a>Ubon</a></li>
                     </ul>
+                </div> -->
+                 <div class="extra-input">
+                        <input type="text" class="form-control typeahead" value="">
+                        <span class="glyphicon glyphicon-screenshot"></span>
                 </div>
                 <div class="input-daterange input-group">
                     <div class="check-wrapper">
@@ -173,9 +184,9 @@
                         <input type="text" class="form-control check-out" value="" placeholder="Check-out Date" readonly='readonly' readonly/>
                     </div>
                 </div>
-                <button type="button" class="btn primary-btn check-out-button">Search</button>
+                <button type="button" class="btn primary-btn check-out-button top-out">Search</button>
                 <div class="extra">
-                    <p><span class="extra-symbol">+</span> Looking for more hotels? Type Here</p>
+                    <p><span class="extra-symbol"></span></p>
                 </div>
                 <div class="form-middle">
                     <div class="extra-input">
@@ -183,7 +194,7 @@
                         <span class="glyphicon glyphicon-screenshot"></span>
                     </div>
                 </div>
-                <!-- <div class="clear"></div> -->
+
                 <div class="form-bottom">
                     <div class="cal-night"> 0 NIGHT(S) </div>
                     <div class="btn-group btn-room">
@@ -220,9 +231,57 @@
             </div>
         </div>
     </div>
-    
+    <!-- End Head part -->
     <!-- Start content body -->
+
+   <!--  <div class="search-mini-wrapper">
+        <nav class="navbar navbar-default search-mini">
+          <div class="container-fluid">
+            
+              <div class="sub-group">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Search for...">
+                  <span class="input-group-btn">
+                    <button class="btn btn-default primary-btn" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                  </span>
+                </div>
+              </div>
+
+             <div class="sub-group">
+                <div class="input-daterange input-group">
+                    <div class="check-wrapper">
+                        <span class="input-group-addon check-add">check-in</span>
+                        <input type="text" class="form-control check-in" value="" placeholder="Check-in Date" readonly='readonly' readonly/>
+                    </div>
+                    <span class="range"> to </span>
+                    <div class="check-wrapper">
+                        <span class="input-group-addon check-add">check-out</span>
+                        <input type="text" class="form-control check-out" value="" placeholder="Check-out Date" readonly='readonly' readonly/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sub-group">
+                <div class="btn btn-default room-guest" data-trigger="click" data-toggle="popover" data-placement="bottom" >
+                    <img class="sub-group-icn" src="./images/male80.svg"><div class="sub-text"><span>1 </span><span>room</span><br/><span>2 </span><span>guests</span></div>
+                </div>
+                <div class="control-guest-group">
+                     <ul>
+                        <li><div class='guest-editor'><span class="wrap"><b>People :</b></span><button class='btn value-controller'>-</button><span class=''>2</span><button class='btn value-controller'>+</button></div></li>
+                        <li><div class='guest-editor'><span class="wrap"><b>Room :</b></span><button class='btn value-controller'>-</button><span class=''>2</span><button class='btn value-controller'>+</button></div>
+                    </ul>
+                </div>
+            </div>
+          
+          </div>
+        </nav>
+    </div> -->
+
     <div class="content_body">
+
+        <!-- Search Bar 2nd Page -->
+        
+
          <div class="row"> 
             <span class="deal_title"><span class="deal_title_arrow"></span><b>Best Deals</b> in Thailand</span>
          </div>
@@ -312,7 +371,7 @@
                               <div class="panel-body">
                                 <ul>
                                     <li class="panel-media">
-                                        <img src="../images/panel-media.jpg">
+                                        <img src="./images/panel-media.jpg">
                                     </li> 
                                     <li class="panel-hotel">
                                         <div class="hotel-list">
@@ -365,7 +424,7 @@
                               <div class="panel-body">
                                 <ul>
                                     <li class="panel-media">
-                                        <img src="../images/panel-media.jpg">
+                                        <img src="./images/panel-media.jpg">
                                     </li> 
                                     <li class="panel-hotel">
                                         <div class="hotel-list">
@@ -420,7 +479,7 @@
                               <div class="panel-body">
                                 <ul>
                                     <li class="panel-media">
-                                        <img src="../images/panel-media.jpg">
+                                        <img src="./images/panel-media.jpg">
                                     </li> 
                                     <li class="panel-hotel">
                                         <div class="hotel-list">
@@ -473,7 +532,7 @@
                               <div class="panel-body">
                                 <ul>
                                     <li class="panel-media">
-                                        <img src="../images/panel-media.jpg">
+                                        <img src="./images/panel-media.jpg">
                                     </li> 
                                     <li class="panel-hotel">
                                         <div class="hotel-list">
@@ -526,57 +585,57 @@
             <div class="row">
                  <div class="col-xs-6 col-sm-4 col-md-3">
                     <a href="#" class="thumbnail">
-                      <img src="../images/destination-card.jpg" alt="Somewhere only we know">
+                      <img src="./images/destination-card.jpg" alt="Somewhere only we know">
                       <span class="thumbnail-title">Phuket</span>
                     </a>
                  </div>
                  <div class="col-xs-6 col-sm-4 col-md-3">
                     <a href="#" class="thumbnail">
-                      <img src="../images/destination-card.jpg" alt="Somewhere only we know">
+                      <img src="./images/destination-card.jpg" alt="Somewhere only we know">
                       <span class="thumbnail-title">Phuket</span>
                     </a>
                  </div>
                  <div class="col-xs-6 col-sm-4 col-md-3">
                     <a href="#" class="thumbnail">
-                      <img src="../images/destination-card.jpg" alt="Somewhere only we know">
+                      <img src="./images/destination-card.jpg" alt="Somewhere only we know">
                       <span class="thumbnail-title">Phuket</span>
                     </a>
                  </div>
                  <div class="col-xs-6 col-sm-4 col-md-3">
                     <a href="#" class="thumbnail">
-                      <img src="../images/destination-card.jpg" alt="Somewhere only we know">
+                      <img src="./images/destination-card.jpg" alt="Somewhere only we know">
                       <span class="thumbnail-title">Phuket</span>
                     </a>
                  </div>
                 <div class="col-xs-6 col-sm-4 col-md-3">
                         <a href="#" class="thumbnail">
-                          <img src="../images/destination-card.jpg" alt="Somewhere only we know">
+                          <img src="./images/destination-card.jpg" alt="Somewhere only we know">
                           <span class="thumbnail-title">Phuket</span>
                         </a>
                      </div>
                      <div class="col-xs-6 col-sm-4 col-md-3">
                         <a href="#" class="thumbnail">
-                          <img src="../images/destination-card.jpg" alt="Somewhere only we know">
+                          <img src="./images/destination-card.jpg" alt="Somewhere only we know">
                           <span class="thumbnail-title">Phuket</span>
                         </a>
                      </div>
                      <div class="col-xs-6 col-sm-4 col-md-3">
                         <a href="#" class="thumbnail">
-                          <img src="../images/destination-card.jpg" alt="Somewhere only we know">
+                          <img src="./images/destination-card.jpg" alt="Somewhere only we know">
                           <span class="thumbnail-title">Phuket</span>
                         </a>
                      </div>
                      <div class="col-xs-6 col-sm-4 col-md-3">
                         <a href="#" class="thumbnail">
-                          <img src="../images/destination-card.jpg" alt="Somewhere only we know">
+                          <img src="./images/destination-card.jpg" alt="Somewhere only we know">
                           <span class="thumbnail-title">Phuket</span>
                         </a>
                      </div>
                 </div>
         </div>
-    <!-- End First Page -->
+        <!-- End First Page -->
 
-    <!-- Starting Second Page -->
+        <!-- Starting Second Page -->
         
         <div class="container search_result_title">
                 <div class="left">
@@ -584,19 +643,24 @@
                     <p>Thu 30 April 2015 - Fri 01 May 2015, 1 night, 1 room, 2 adults</p>
                 </div>
                 <div class="right">
-                    <button class="btn primary-btn"><div class="glyphicon glyphicon-search"></div>Edit Search</button>
+                    <button class="btn primary-btn edit-search"><div class="glyphicon glyphicon-search"></div>Edit Search</button>
+
                     <!-- mobile view for filter  -->
                     <div class="navbar-header">
-                        <button type="button" class="navbar-toggle filter-wrapper-icon" data-toggle="collapse" data-target=".filter-collapse">
-                            <span class="filter-title">Filter</span>
-                            <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-                        </button>
+                            <button type="button" class="navbar-toggle filter-wrapper-icon" data-toggle="collapse" data-target=".filter-collapse">
+                                <span class="filter-title">Filter</span>
+                                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                            </button>
                     </div>
+
+                   
                 </div>
+
         </div>
         
         <!-- body view for filter -->
         <nav class="navbar navbar-default filter-nav collapse filter-collapse">
+
                     <div class="price-group group">
                         <div class="navbar-text"> price : </div>
                         <button type="button" class="btn btn-default navbar-btn yellow-tooltip" data-toggle="tooltip" data-trigger="hover" data-placement="top" title="THB 0 - THB 1,999"><span class="symbol">$ </span><span class="price_name">THB 0 - THB 1,999</span></button>
@@ -610,31 +674,31 @@
                         <ul>
                             <li>
                                 <div class="star-blue-group">
-                                    <span class="stars-blue one-star one-rate fade-star"></span>
+                                    <span class="stars-grey one-star one-rate fade-star"></span>
                                     <span class="one-star-txt">1</span>
                                 </div>
                             </li>
                             <li>
                                 <div class="star-blue-group">
-                                    <span class="stars-blue one-star two-rate fade-star"></span>
+                                    <span class="stars-grey one-star two-rate fade-star"></span>
                                     <span class="one-star-txt">2</span>
                                 </div>
                             </li>
                             <li>
                                 <div class="star-blue-group">
-                                    <span class="stars-blue one-star three-rate fade-star"></span>
+                                    <span class="stars-grey one-star three-rate fade-star"></span>
                                     <span class="one-star-txt">3</span>
                                 </div>
                             </li>
                             <li>
                                 <div class="star-blue-group">
-                                    <span class="stars-blue one-star four-rate fade-star"></span>
+                                    <span class="stars-grey one-star four-rate fade-star"></span>
                                     <span class="one-star-txt">4</span>
                                 </div>
                             </li>
                             <li>
                                 <div class="star-blue-group">
-                                    <span class="stars-blue one-star five-rate fade-star"></span>
+                                    <span class="stars-grey one-star five-rate fade-star"></span>
                                     <span class="one-star-txt">5</span>
                                 </div>
                             </li>
@@ -650,64 +714,88 @@
                             <li>5</li>
                         </ul>
                          <input id="review-rate" type="text"/><br/>
-                         <ul class="half-rate-title">
+                       <!--   <ul class="half-rate-title">
                             <li>1.5</li>
                             <li>2.5</li>
                             <li>3.5</li>
                             <li>4.5</li>
-                        </ul>
+                        </ul> -->
                     </div>
                     <button class="btn primary-btn apply-filter"><p>Apply</p></button>
         </nav>
 
-        <div class="table-responsive hotel_list">
-              <table class="table">
-                <thead class="best_deal">
-                    <tr >
-                        <th colspan="4"> <a href="#">Grand Sukhumvit Hotel Bangkok Managed by Accor</a></th>
-                        <th class="helper">
-                            <span data-toggle="popover" data-placement="top" data-original-title="Supersaver" data-content="Save more than 50% off">?</span>
-                        </th>
-                    </tr>
+        <nav class="navbar navbar-default sorting">
+                        <ul>
+                            <li>Sort by:</li>
+                            <li class="active">
+                                <a href="#">Discount Percent <span class="glyphicon glyphicon-chevron-down"></span></a>
+                            </li>
+                            <li>
+                                <a href="#">Price <span class="glyphicon-chevron-down"></span></a>
+                            </li>
+                            <li>
+                                <a href="#">Guest Review <span class="glyphicon-chevron-down"></span></a>
+                            </li>
+                            <li>
+                                <a href="#">Hotel Ranking <span class="glyphicon-chevron-down"></span></a>
+                            </li>
+                        </ul> 
+        </nav>
 
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="hotel_avatar_wrapper">
-                            <a href="#"><img src="images/test_img.jpg" alt="test_img" class="hotel_avatar"></a>
-                        </td>
-                        <td class="rate_title">
-                            <div>
-                                <span class="stars-blue three-half-star"></span>
-                                <div class="location"><span class="loc_icn"></span>Longtexxttttttttt - Longtexxttttttttt</div>
-                            </div>
-                            <div>
-                                <span class="guest_rate">Guest Rating <span>5.0 / 5.0</span></span>
-                            </div>
-                        </td>
-                        <td class="special_deal_title">
-                            <span>Special Deal blah blah blah blah blah: Save 100%</span>
-                        </td>
-                        <td class="price_before_after">
-                            <div class="from_price">
-                                <span class="from">From</span>
-                                <span class="prev_price">
-                                    <span>THB</span>
+       <!--  <div class="container-fluid">
+            <div class=""
+        </div> -->
+
+        <div class="table-responsive hotel_list">
+              
+
+              <table class="table">
+                    <thead class="best_deal">
+                        <tr>
+                            <th colspan="5"> <a href="#">Grand Sukhumvit Hotel Bangkok Managed by Accor</a></th>
+                            <th class="helper">
+                                <span data-toggle="popover" data-placement="top" data-original-title="Supersaver" data-content="Save more than 50% off">?</span>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="hotel_avatar_wrapper">
+                                <a href="#"><img src="images/test_img.jpg" alt="test_img" class="hotel_avatar"></a>
+                            </td>
+                            <td class="rate_title">
+                                <div>
+                                    <span class="stars-blue three-half-star"></span>
+                                    <div class="location"><span class="loc_icn"></span>Longtexxttttttttt - Longtexxttttttttt</div>
+                                </div>
+                                <div>
+                                    <span class="guest_rate">Guest Rating <span>5.0 / 5.0</span></span>
+                                </div>
+                            </td>
+                            <td class="special_deal_title">
+                                <span>Special Deal blah blah blah blah blah: Save 100%</span>
+                            </td>
+                            <td class="price_before_after">
+                                <div class="from_price">
+                                    <span class="from">From</span>
+                                    <span class="prev_price">
+                                                        <span>THB</span>
                                     <span>9,999,999</span>
-                                </span>
-                            </div>
-                            <div class="to_price">
-                                <span>THB</span><span>9,999,999</span>
-                            </div>
-                        </td>
-                        <td class="book_now_btn">
-                             <button type="button" class="btn primary-btn">Book Now</button>
-                             <span class="powered_by"></span>
-                        </td>
-                </tbody>
+                                    </span>
+                                </div>
+                                <div class="to_price">
+                                    <span>THB</span><span>9,999,999</span>
+                                </div>
+                            </td>
+                            <td class="book_now_btn">
+                                <button type="button" class="btn primary-btn">Book Now</button>
+                                <span class="powered_by"></span>
+                            </td>
+                    </tbody>
+
               </table>
         </div>
-        
+        <!-- 
         <div class="table-responsive hotel_list second_best">
               <table class="table">
                 <thead class="second_best_deal">
@@ -777,7 +865,7 @@
                                     <span>THB</span>
                                     <span>9,999,999</span>
                                 </span>
-                            </span> -->
+                            </span>
                             <span class="to_price">
                                 <span>THB</span><span>9,999,999</span>
                             </span>
@@ -791,7 +879,7 @@
               </table>
             </a>
         </div>
-        
+         -->
         <div class="search_footer_result row">
             <p class="col-xs-12 col-sm-6 col-md-6 col-lg-6">Your search matched <span>762</span> of our <span>762</span> hotels : Showing results <span>1</span>-<span>20</span></p>
             <button class="btn col-xs-12 col-sm-6 col-md-6 col-lg-6"> View asdfsdfasfdsdfsadfs<span class="continue"></span></button>

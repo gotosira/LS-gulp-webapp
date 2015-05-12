@@ -1,3 +1,25 @@
+$('.sorting li').click(function(e){
+    e.preventDefault();
+    $('.sorting').find('.active').removeClass('active');
+    $('.sorting').find('.glyphicon').removeClass('glyphicon');
+    $(this).addClass('active');
+    $(this).find('span').addClass('glyphicon');
+    
+    if($(this).find('.glyphicon').hasClass('glyphicon-chevron-down')){
+            $(this).find('.glyphicon').addClass('glyphicon-chevron-up');
+            $(this).find('.glyphicon').removeClass('glyphicon-chevron-down');
+    }else{
+            $(this).find('.glyphicon').addClass('glyphicon-chevron-down');
+            $(this).find('.glyphicon').removeClass('glyphicon-chevron-up');
+    }
+    
+   
+});
+
+var room_and_guest = $('.control-guest-group').html();
+
+$('.room-guest').popover({placement: 'bottom', title: '', content: room_and_guest, html: true});
+
 $("#review-rate").slider({ id: "review-rate", min: 1, max: 5, range: true, value: [1, 5], step: 0.5 });
 
 $('[data-toggle="tooltip"]').tooltip();
@@ -195,24 +217,24 @@ function cloneToTextArea() {
 
 
 
-$('.extra p').click(function() {
-    $('.form-middle').slideToggle('fast');
-    var symbol = $('.extra-symbol').text();
-    if (symbol == "+") {
-        $('.extra-symbol').html('-');
-    } else {
-        $('.extra-symbol').html('+');
-    }
-    $('.form-bottom').slideDown('fast');
-    $('.check-out-button').hide();
-    $('.bottom-out').show();
-});
+// $('.extra p').click(function() {
+//     $('.form-middle').slideToggle('fast');
+//     var symbol = $('.extra-symbol').text();
+//     if (symbol == "+") {
+//         $('.extra-symbol').html('-');
+//     } else {
+//         $('.extra-symbol').html('+');
+//     }
+//     $('.form-bottom').slideDown('fast');
+//     $('.check-out-button').hide();
+//     $('.bottom-out').show();
+// });
 
-$('.btn-int, .check-in, .check-out').click(function() {
-    $('.form-bottom').slideDown('fast');
-    $('.check-out-button').hide();
-    $('.bottom-out').show();
-});
+// $('.btn-int, .check-in, .check-out').click(function() {
+//     $('.form-bottom').slideDown('fast');
+//     $('.check-out-button').hide();
+//     $('.bottom-out').show();
+// });
 
 /* -- DatePicker Function --- */
 function days() {
@@ -256,11 +278,11 @@ $('.check-out').datepicker().on('changeDate', function() {
 });
 
 
-$('.check-in').on('click', function() {
-    $('html,body').animate({
-        scrollTop: "0"
-    });
-});
+// $('.check-in').on('click', function() {
+//     $('html,body').animate({
+//         scrollTop: "0"
+//     });
+// });
 
 
 $('.glyphicon-screenshot').on('click', function() {

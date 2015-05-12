@@ -179,10 +179,10 @@
   position: absolute;
   width: 20px;
   height: 20px;
-  background-color: #337ab7;
+  background-color: #5f778b;
   background-image: -webkit-linear-gradient(top, #149bdf 0%, #0480be 100%);
   background-image: -o-linear-gradient(top, #149bdf 0%, #0480be 100%);
-  background-image: linear-gradient(to bottom, #149bdf 0%, #0480be 100%);
+  background-image: linear-gradient(to bottom, #5f778b 0%, #38566D 70%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff149bdf', endColorstr='#ff0480be', GradientType=0);
   filter: none;

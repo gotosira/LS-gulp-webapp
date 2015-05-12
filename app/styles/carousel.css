@@ -40,13 +40,33 @@
     background: rgba(0, 0, 0, 1);
 }
 .item:nth-child(1) {
-  background: url('../images/hero-bg.jpg') no-repeat;
+
+  background: url('../images/hero-bg-1.jpg') no-repeat;
 }
 .item:nth-child(2) {
   background: url('../images/hero-bg-2.jpg') no-repeat;
 }
-
+.item:nth-child(3) {
+  background: url('../images/hero-bg-3.jpg') no-repeat;
+}
+.item:nth-child(4) {
+  background: url('../images/hero-bg-4.jpg') no-repeat;
+}
+.item:nth-child(5) {
+  background: url('../images/hero-bg-5.jpg') no-repeat;
+}
 .carousel-indicators{
   bottom: 0 !important;
+}
+
+.image-title{
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 14px;
+  text-shadow: 1px 1px 8px rgba(0, 0, 0, 5);
+  font-family: 'Arial';
+  font-weight: 600;
 }
 

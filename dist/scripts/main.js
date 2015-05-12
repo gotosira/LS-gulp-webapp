@@ -1,132 +1,291 @@
-function onGeoSuccess(e) {
-    var t = e.address.country,
-        n = e.address.city;
-    $(".yourcountry").html(t), $(".yourcity").html(n)
-}
-
-function onGeoError(e) {
-    console.log(e)
-}
-
-function passSuccess(e) {
-    var t = e.address.country + ", " + e.address.city;
-    $(".typeahead").val(t)
-}
-
-function cloneToTextArea() {
-    var e = $(".country-group").find(".selected").text(),
-        t = $(".area-group").find(".selected").text();
-    if (e.length) {
-        var n = e + ", ";
-        $(".extra-input > input").val(n)
+$('.sorting li').click(function(e){
+    e.preventDefault();
+    $('.sorting').find('.active').removeClass('active');
+    $('.sorting').find('.glyphicon').removeClass('glyphicon');
+    $(this).addClass('active');
+    $(this).find('span').addClass('glyphicon');
+    
+    if($(this).find('.glyphicon').hasClass('glyphicon-chevron-down')){
+            $(this).find('.glyphicon').addClass('glyphicon-chevron-up');
+            $(this).find('.glyphicon').removeClass('glyphicon-chevron-down');
+    }else{
+            $(this).find('.glyphicon').addClass('glyphicon-chevron-down');
+            $(this).find('.glyphicon').removeClass('glyphicon-chevron-up');
     }
-    if (t.length) {
-        var n = ", " + t;
-        $(".extra-input > input").val(n)
-    }
-    if (e.length && t.length) {
-        var n = e + ", " + t;
-        $(".extra-input > input").val(n)
-    }
-}
-
-function days() {
-    var e = $(".check-in").datepicker("getDate").getTime(),
-        t = $(".check-out").datepicker("getDate").getTime(),
-        n = 864e5,
-        a = Math.round(Math.abs((e - t) / n));
-    $(".cal-night").html(a + " NIGHT(S) ")
-}
-$("#review-rate").slider({
-    id: "review-rate",
-    min: 1,
-    max: 5,
-    range: !0,
-    value: [1, 5],
-    step: .5
-}), $('[data-toggle="tooltip"]').tooltip(), $(".carousel").carousel({
-    interval: 1e4
-}), $(".helper > span").popover(), $(".alert-show").click(function() {
-    $(this).hide()
-}), $(".star-blue-group").click(function() {
-    $(this).find(".one-star").toggleClass("fade-star")
-}), $(".price-group > button").click(function() {
-    $(this).toggleClass("active")
-}), $("#sign-up-box").modal({
-    show: !1
-}), $(".sign-up").on("click", function() {
-    var e = $(".subscribe-box").val();
-    "" != e && ($(".modal-email").html(e), $("#sign-up-box").modal("show"))
-}), window.onload = function() {
-    geolocator.locateByIP(onGeoSuccess, onGeoError, 0, null)
-}, $("input[readonly]").on("focus", function(e) {
-    $(this).trigger("blur")
-}), $(".language > li > a").click(function() {
-    var e = $(this).find("span:eq(0)").attr("class"),
-        t = $(this).find("span:eq(1)").text(),
-        n = $(".language-initial").find("span:eq(0)").attr("class"),
-        a = $(".language-initial").find(".extra-text").text();
-    $(this).find("span:eq(0)").removeClass(), $(this).find("span:eq(0)").addClass(n), $(this).find("span:eq(1)").html(a), $(".language-initial").find("span:eq(0)").removeClass(), $(".language-initial").find("span:eq(0)").addClass(e), $(".language-initial").find(".extra-text").html(t), $(".language-initial").attr("aria-expanded", !1), $(".language-wrapper").removeClass("open")
-}), $(".dropdown-menu:not(.language) li a").click(function() {
-    var e = $(this).text(),
-        t = $(this).parents(".btn-group").find(".btn-int > .btn-text").text();
-    $(this).html(t), $(this).parents(".btn-group").find(".dropdown-toggle").html('<span class="btn-text selected">' + e + '</span> <span class="caret"></span>'), ($(this).parents(".btn-group").hasClass("country-group") || $(this).parents(".btn-group").hasClass("area-group")) && cloneToTextArea()
+    
+   
 });
+
+var room_and_guest = $('.control-guest-group').html();
+
+$('.room-guest').popover({placement: 'bottom', title: '', content: room_and_guest, html: true});
+
+$("#review-rate").slider({ id: "review-rate", min: 1, max: 5, range: true, value: [1, 5], step: 0.5 });
+
+$('[data-toggle="tooltip"]').tooltip();
+
+$('.carousel').carousel({
+    interval: 10000
+});
+
+$('.helper > span').popover();
+
+$('.alert-show').click(function(){
+    $(this).hide();
+});
+
+$('.star-blue-group').click(function(){
+
+    $(this).find('.one-star').toggleClass('fade-star');
+
+    // $('.one-star').addClass('fade-star');
+
+    // if($(this).find('.one-star').hasClass('one-rate')){
+    //     $('.one-rate').removeClass('fade-star');
+    // }else if($(this).find('.one-star').hasClass('two-rate')){
+    //     $('.one-rate').removeClass('fade-star');
+    //     $('.two-rate').removeClass('fade-star');
+    // }else if($(this).find('.one-star').hasClass('three-rate')){
+    //     $('.one-rate').removeClass('fade-star');
+    //     $('.two-rate').removeClass('fade-star');
+    //     $('.three-rate').removeClass('fade-star');
+    // }else if($(this).find('.one-star').hasClass('four-rate')){
+    //     $('.one-rate').removeClass('fade-star');
+    //     $('.two-rate').removeClass('fade-star');
+    //     $('.three-rate').removeClass('fade-star');
+    //     $('.four-rate').removeClass('fade-star');
+    // }else if($(this).find('.one-star').hasClass('five-rate')){
+    //     $('.one-rate').removeClass('fade-star');
+    //     $('.two-rate').removeClass('fade-star');
+    //     $('.three-rate').removeClass('fade-star');
+    //     $('.four-rate').removeClass('fade-star');
+    //     $('.five-rate').removeClass('fade-star');
+    // }
+    
+});
+
+$('.price-group > button').click(function(){
+     $(this).toggleClass('active');
+});
+
+
+//  $('.sign-up').on('click', function (ev) {
+//         // ev.preventDefault();
+//         // if($('.subscribe-box').val() != ""){
+//         //     $("#sign-up-box").modal("hide");
+//         // }else{
+//         //      $("#sign-up-box").load(target, function () {
+//         //         $("#sign-up-box").modal("show");
+//         //     });
+//         // }
+       
+        
+// });
+$('#sign-up-box').modal({ show: false});
+
+$('.sign-up').on('click', function(){
+    var temp_email = $('.subscribe-box').val();
+    if(temp_email != ""){
+        $('.modal-email').html(temp_email);
+        $('#sign-up-box').modal('show');
+    }else{
+        // do nothing
+    }
+});
+
+
+function onGeoSuccess(location) {
+    var strLocation = location.address.country;
+    var strCity = location.address.city;
+
+ 
+    $('.yourcountry').html(strLocation);
+    $('.yourcity').html(strCity);
+}
+
+function onGeoError(error) {
+    console.log(error);
+}
+
+
+function passSuccess(location) {
+    var temp_location = location.address.country + ', ' + location.address.city;
+    // Insert to input text search
+    $('.typeahead').val(temp_location);
+}
+
+
+window.onload = function() {
+    geolocator.locateByIP(onGeoSuccess, onGeoError, 0, null);
+}
+
+
+
+$('input[readonly]').on('focus', function(ev) {
+    $(this).trigger('blur');
+});
+
+
+$('.language > li > a').click(function() {
+    var get_lang_flag = $(this).find('span:eq(0)').attr('class');
+    var get_lang_text = $(this).find('span:eq(1)').text();
+    var temp_init_flag = $('.language-initial').find('span:eq(0)').attr('class');
+    var temp_init_text = $('.language-initial').find('.extra-text').text();
+
+
+    $(this).find('span:eq(0)').removeClass();
+    $(this).find('span:eq(0)').addClass(temp_init_flag);
+    $(this).find('span:eq(1)').html(temp_init_text);
+
+    $('.language-initial').find('span:eq(0)').removeClass();
+    $('.language-initial').find('span:eq(0)').addClass(get_lang_flag);
+    $('.language-initial').find('.extra-text').html(get_lang_text);
+
+
+
+
+    $('.language-initial').attr('aria-expanded', false);
+    $('.language-wrapper').removeClass('open');
+
+});
+
+
+$(".dropdown-menu:not(.language) li a").click(function() {
+    var selectedText = $(this).text();
+    var storeIntText = $(this).parents('.btn-group').find('.btn-int > .btn-text').text();
+
+    $(this).html(storeIntText);
+
+    $(this).parents('.btn-group').find('.dropdown-toggle').html('<span class="btn-text selected">' + selectedText + '</span> <span class="caret"></span>');
+
+    if ($(this).parents('.btn-group').hasClass('country-group') || $(this).parents('.btn-group').hasClass('area-group')) {
+        cloneToTextArea();
+    }
+
+});
+
 var countries = new Bloodhound({
-    datumTokenizer: Bloodhound.tokenizers.obj.whitespace("name"),
+    datumTokenizer: Bloodhound.tokenizers.obj.whitespace('name'),
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     limit: 10,
     prefetch: {
-        url: "./scripts/states.json",
-        filter: function(e) {
-            return $.map(e, function(e) {
+        url: './scripts/states.json',
+        filter: function(list) {
+            return $.map(list, function(country) {
                 return {
-                    name: e
-                }
-            })
+                    name: country
+                };
+            });
         }
     }
 });
-countries.initialize(), $(".typeahead").typeahead({
-    hint: !0,
-    highlight: !0,
+
+countries.initialize();
+
+$('.typeahead').typeahead({
+    hint: true,
+    highlight: true,
     minLength: 1
 }, {
-    name: "countries",
-    displayKey: "name",
+    name: 'countries',
+    displayKey: 'name',
     source: countries.ttAdapter()
-}), $(".extra p").click(function() {
-    $(".form-middle").slideToggle("fast");
-    var e = $(".extra-symbol").text();
-    $(".extra-symbol").html("+" == e ? "-" : "+"), $(".form-bottom").slideDown("fast"), $(".check-out-button").hide(), $(".bottom-out").show()
-}), $(".btn-int, .check-in, .check-out").click(function() {
-    $(".form-bottom").slideDown("fast"), $(".check-out-button").hide(), $(".bottom-out").show()
 });
-var dateToday = new Date;
-$(".input-daterange").datepicker({
-    format: "dd/mm/yyyy",
+
+function cloneToTextArea() {
+    var countryText = $(".country-group").find('.selected').text();
+    var areaText = $(".area-group").find('.selected').text();
+
+
+    if (countryText.length) {
+        var totalText = countryText + ', ';
+        $('.extra-input > input').val(totalText);
+    }
+
+    if (areaText.length) {
+        var totalText = ', ' + areaText;
+        $('.extra-input > input').val(totalText);
+    }
+
+    if (countryText.length && areaText.length) {
+        var totalText = countryText + ', ' + areaText;
+        $('.extra-input > input').val(totalText);
+    }
+
+}
+
+
+
+
+// $('.extra p').click(function() {
+//     $('.form-middle').slideToggle('fast');
+//     var symbol = $('.extra-symbol').text();
+//     if (symbol == "+") {
+//         $('.extra-symbol').html('-');
+//     } else {
+//         $('.extra-symbol').html('+');
+//     }
+//     $('.form-bottom').slideDown('fast');
+//     $('.check-out-button').hide();
+//     $('.bottom-out').show();
+// });
+
+// $('.btn-int, .check-in, .check-out').click(function() {
+//     $('.form-bottom').slideDown('fast');
+//     $('.check-out-button').hide();
+//     $('.bottom-out').show();
+// });
+
+/* -- DatePicker Function --- */
+function days() {
+    var a = $(".check-in").datepicker('getDate').getTime(),
+        b = $(".check-out").datepicker('getDate').getTime(),
+        c = 24 * 60 * 60 * 1000,
+        totalNight = Math.round(Math.abs((a - b) / (c)));
+    $('.cal-night').html(totalNight + ' NIGHT(S) ');
+}
+
+var dateToday = new Date();
+$('.input-daterange').datepicker({
+    format: "dd-mm-yyyy",
     language: "en",
     startDate: dateToday
-}), $(".check-in").datepicker().on("changeDate", function() {
-    $(".check-in").datepicker("hide"), $(".check-out").datepicker("show")
-}).on("hide", function() {
-    $(".datepicker-opened").hide()
-}).on("show", function() {
-    $(".datepicker-opened").show()
-}).on("clearDate", function() {
-    $(".datepicker-opened").hide()
-}), $(".check-out").datepicker().on("changeDate", function() {
-    $(".check-out").datepicker("hide")
-}).on("hide", function() {
-    days(), $(".datepicker-opened").hide(), $(".datepicker").removeClass("datepicker-checkout")
-}).on("show", function() {
-    $(".datepicker").addClass("datepicker-checkout"), $(".datepicker-opened").show()
-}).on("clearDate", function() {
-    $(".datepicker-opened").hide()
-}), $(".check-in").on("click", function() {
-    $("html,body").animate({
-        scrollTop: "0"
-    })
-}), $(".glyphicon-screenshot").on("click", function() {
-    geolocator.locateByIP(passSuccess, onGeoError, 2, null)
+});
+
+$('.check-in').datepicker().on('changeDate', function() {
+    $('.check-in').datepicker('hide');
+    $('.check-out').datepicker('show');
+}).on('hide', function() {
+    $('.datepicker-opened').hide();
+}).on('show', function() {
+    $('.datepicker-opened').show();
+}).on('clearDate', function() {
+    $('.datepicker-opened').hide();
+});
+
+$('.check-out').datepicker().on('changeDate', function() {
+    $('.check-out').datepicker('hide');
+}).on('hide', function() {
+    // calculate nights
+    days();
+    $('.datepicker-opened').hide();
+    $('.datepicker').removeClass('datepicker-checkout');
+}).on('show', function() {
+    $('.datepicker').addClass('datepicker-checkout');
+    $('.datepicker-opened').show();
+}).on('clearDate', function() {
+    $('.datepicker-opened').hide();
+});
+
+
+// $('.check-in').on('click', function() {
+//     $('html,body').animate({
+//         scrollTop: "0"
+//     });
+// });
+
+
+$('.glyphicon-screenshot').on('click', function() {
+    geolocator.locateByIP(passSuccess, onGeoError, 2, null);
+
 });
