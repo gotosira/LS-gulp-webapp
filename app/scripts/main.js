@@ -4,7 +4,7 @@ $('.sorting li').click(function(e){
     $('.sorting').find('.glyphicon').removeClass('glyphicon');
     $(this).addClass('active');
     $(this).find('span').addClass('glyphicon');
-    
+
     if($(this).find('.glyphicon').hasClass('glyphicon-chevron-down')){
             $(this).find('.glyphicon').addClass('glyphicon-chevron-up');
             $(this).find('.glyphicon').removeClass('glyphicon-chevron-down');
@@ -12,8 +12,8 @@ $('.sorting li').click(function(e){
             $(this).find('.glyphicon').addClass('glyphicon-chevron-down');
             $(this).find('.glyphicon').removeClass('glyphicon-chevron-up');
     }
-    
-   
+
+
 });
 
 var room_and_guest = $('.control-guest-group').html();
@@ -61,7 +61,7 @@ $('.star-blue-group').click(function(){
     //     $('.four-rate').removeClass('fade-star');
     //     $('.five-rate').removeClass('fade-star');
     // }
-    
+
 });
 
 $('.price-group > button').click(function(){
@@ -78,8 +78,8 @@ $('.price-group > button').click(function(){
 //         //         $("#sign-up-box").modal("show");
 //         //     });
 //         // }
-       
-        
+
+
 // });
 $('#sign-up-box').modal({ show: false});
 
@@ -98,7 +98,7 @@ function onGeoSuccess(location) {
     var strLocation = location.address.country;
     var strCity = location.address.city;
 
- 
+
     $('.yourcountry').html(strLocation);
     $('.yourcity').html(strCity);
 }
@@ -252,10 +252,17 @@ $('.input-daterange').datepicker({
     startDate: dateToday
 });
 
+var nextSelected = new Date();
+
 $('.check-in').datepicker().on('changeDate', function() {
     $('.check-in').datepicker('hide');
     $('.check-out').datepicker('show');
 }).on('hide', function() {
+
+    nextSelected = $('.check-in').datepicker('getDate');
+    nextSelected.setDate(nextSelected.getDate()+1);
+    $('.check-out').datepicker('setDate', nextSelected);
+
     $('.datepicker-opened').hide();
 }).on('show', function() {
     $('.datepicker-opened').show();
