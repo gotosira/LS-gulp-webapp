@@ -10,8 +10,8 @@ var uglify = require('gulp-uglify');
 
 gulp.task('jsconcat', function () {
    return gulp.src('app/scripts/**/*.js')
-              .pipe(concat('all.js'))
-              .pipe(uglify())
+              // .pipe(concat('all.js'))
+              // .pipe(uglify())
               .pipe(gulp.dest('./dist/scripts'));
 });
 
